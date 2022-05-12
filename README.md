@@ -1,2 +1,2 @@
-# Vector-Helper
+# VectorHelper
 Helper for Celeste
