@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net452</TargetFrameworks>
-    <AssemblyName>$MODNAME$</AssemblyName>
-    <RootNamespace>Celeste.Mod.$MODNAME$</RootNamespace>
+    <AssemblyName>VectorHelper</AssemblyName>
+    <RootNamespace>Celeste.Mod.VectorHelper</RootNamespace>
     <LangVersion>7.3</LangVersion>
     <CelesteGamePath Condition="'$(CELESTEGAMEPATH)' == ''">..\..</CelesteGamePath>
   </PropertyGroup>

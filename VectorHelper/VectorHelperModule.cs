@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 
-namespace Celeste.Mod.$MODNAME$ {
-    public class $MODNAME$Module : EverestModule {
+namespace Celeste.Mod.VectorHelper {
+    public class VectorHelperModule : EverestModule {
         
-        public static $MODNAME$Module Instance;
+        public static VectorHelperModule Instance;
 
-        public $MODNAME$Module() {
+        public VectorHelperModule() {
             Instance = this;
         }
 
