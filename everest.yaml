@@ -1,5 +1,5 @@
 - Name: VectorHelper
-  Version: 1.0.0
+  Version: 0.0.1
   Dependencies:
     - Name: Everest
       Version: 1.3000.0
