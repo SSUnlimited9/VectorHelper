@@ -12,10 +12,10 @@ namespace Celeste.Mod.TestMod
 {
     public class TestMod : EverestModule
     {
-        void Load()
+        override public void Load()
         { }
 
-        void Unload()
+        override public void Unload()
         { }
 
     }

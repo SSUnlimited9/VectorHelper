@@ -1,6 +1,6 @@
 - Name: VectorHelper
   Version: 0.0.1
-#  DLL: TestMod/out/TestMod.dll
+  DLL: TestMod\TestMod\bin\Debug\TestMod.dll
   Dependencies:
     - Name: Everest
       Version: 1.3000.0
