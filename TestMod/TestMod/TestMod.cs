@@ -14,8 +14,31 @@ namespace Celeste.Mod.TestMod
     {
         override public void Load()
         {
-            
-            Console.WriteLine("I pledge to not spill 8.3 tons of oil into the gulf of mexico");
+            Random rnd = new Random();
+
+            string[] motd = {
+                "I pledge to not cause a catastrophic disaster in the world",
+                "Uhh... hi..?",
+                "Why are we here... Just to suffer...",
+                "Never gonna give you up",
+                "Never gonna let you down",
+                "Who cut the cheese?",
+                "Wheres the lamp SAUCE!?",
+                "You'll never catch me gordon",
+                ":)",
+                "Hi, Phil Swift here with Flex Tape! The super-strong waterproof tape that can instantly patch, bond, seal, and repair!",
+                "SSUnlimited was here",
+                "Veggieoskibroski was here",
+                "Expected ';' at line 32",
+                "OH SH-! WE'RE OUTTA SPACE! Delete system32?"
+            };
+
+            int motdi = rnd.Next(motd.Length);
+
+            Console.WriteLine(motd[motdi]);
+            Console.WriteLine("VectorHelper Loaded!");
+
+
         }
 
         override public void Unload()
