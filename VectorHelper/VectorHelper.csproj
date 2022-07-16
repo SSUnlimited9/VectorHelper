@@ -21,9 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Celeste" HintPath="$(CELESTEGAMEPATH)\Celeste.exe" />
-    <Reference Include="MMHOOK_Celeste" HintPath="$(CELESTEGAMEPATH)\MMHOOK_Celeste.dll" />
-    <Reference Include="YamlDotNet" HintPath="$(CELESTEGAMEPATH)\YamlDotNet.dll" />
+    <Reference Include="Celeste">
+      <HintPath>..\..\..\Celeste.exe</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_Celeste">
+      <HintPath>..\..\..\MMHOOK_Celeste.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Choose>
