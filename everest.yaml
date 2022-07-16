@@ -1,8 +1,6 @@
 - Name: VectorHelper
-  Version: 0.0.1
-  DLL: TestMod\TestMod\bin\Debug\TestMod.dll
+  Version: 0.0.1-dev
+  DLL: VectorHelper/bin/Debug/net452/VectorHelper.dll
   Dependencies:
     - Name: Everest
       Version: 1.3000.0
-    - Name: Celeste
-      Version: 1.4.0.0

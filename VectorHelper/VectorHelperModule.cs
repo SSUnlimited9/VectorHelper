@@ -10,6 +10,7 @@ namespace Celeste.Mod.VectorHelper {
         }
 
         public override void Load() {
+            Console.WriteLine("VectorHelper Loaded Successfully (hopefully)");
         }
 
         public override void Unload() {
