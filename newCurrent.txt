@@ -1,0 +1,8 @@
+Currently adding: Customizable Holdable
+
+Entity(s): 
+
+Custom Holdable:
+    Sprite Directory
+
+    (List anything else that should be added as customization for custom holdables)
