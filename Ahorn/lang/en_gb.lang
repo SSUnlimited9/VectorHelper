@@ -1,0 +1,11 @@
+# VectorHelper Tooltips
+
+# Entities
+
+# CustomHoldables
+placements.entities.VectorHelper/CustomHoldable.tooltips.spriteDirectory=The path to your sprite, Relative to Graphics/Atlases/Gameplay (Without .png) \n This is the sprite that will appear as the Holdable.
+placements.entities.VectorHelper/CustomHoldable.tooltips.collisionBox=The collision box \n The format is 'x,y,ox,oy' or 'Width, Height, Offset X, Offset Y' \n '8,10,-4,-10' is the default collision box.
+placements.entities.VectorHelper/CustomHoldable.tooltips.pickupCollisionBox=The pickup collision box \n This will allow the player to pickup the Holdable \n The format is 'x,y,ox,oy' or 'Width, Height, Offset X, Offset Y' \n '24,24,-12,-12' is the default pickup collision box.
+placements.entities.VectorHelper/CustomHoldable.tooltips.killOnPickup=Kills the player if they pickup the Holdable.
+placements.entities.VectorHelper/CustomHoldable.tooltips.killOnCollide=Kills the player if they collide with the collision box.
+placements.entities.VectorHelper/CustomHoldable.tooltips.spawnsFloating=Whether or not the Holdable can spawn in the air \n \n If this is disabled and the Holdable is placed in the air, It will fall on spawn.
