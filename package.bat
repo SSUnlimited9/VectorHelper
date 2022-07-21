@@ -3,6 +3,7 @@
 set dirs =<pkgInclude
 
 
+
 :: Create Package Output Directory
 if not exist out\ (
     mkdir out
@@ -26,7 +27,7 @@ cd ..
 ))
 
 :: Copy a few extra files
-copy everestPkg.yaml out\package\everestPkg.yaml
+copy everestPkg.yaml out\package\everest.yaml
 copy VectorHelper\obj\Debug\net452\VectorHelper.dll out\package\VectorHelper.dll
 
 :: Archive everything up
