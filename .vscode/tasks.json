@@ -22,7 +22,8 @@
         {
             "label": "Build and Launch",
             "type":"shell",
-            "command":"${workspaceFolder}\\buildLaunch.bat",
+            "command":"${workspaceFolder}\\build.bat",
+            "args": ["r"],
             "group": {
                 "kind": "test",
                 "isDefault": false
