@@ -13,7 +13,7 @@
         {
             "label": "Launch Everest",
             "type":"shell",
-            "command":"${workspaceFolder}\\..\\..\\..\\Celeste.exe",
+            "command":"${workspaceFolder}\\..\\..\\Celeste.exe",
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -25,6 +25,15 @@
             "command":"${workspaceFolder}\\buildLaunch.bat",
             "group": {
                 "kind": "test",
+                "isDefault": false
+            }
+        },
+        {
+            "label":"Package",
+            "type":"shell",
+            "command":"${workspaceFolder}\\package.bat",
+            "group": {
+                "kind": "build",
                 "isDefault": false
             }
         }
