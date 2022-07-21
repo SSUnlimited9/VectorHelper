@@ -24,8 +24,14 @@
     <Reference Include="Celeste">
       <HintPath>..\..\..\Celeste.exe</HintPath>
     </Reference>
+    <Reference Include="FNA">
+      <HintPath>..\..\..\FNA.dll</HintPath>
+    </Reference>
     <Reference Include="MMHOOK_Celeste">
       <HintPath>..\..\..\MMHOOK_Celeste.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\..\..\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
 
