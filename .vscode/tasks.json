@@ -3,8 +3,8 @@
     "tasks": [
         {
             "label": "Build",
-            "type":"shell",
-            "command":"${workspaceFolder}\\build.bat",
+            "type": "shell",
+            "command": "${workspaceFolder}\\build.bat",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -12,8 +12,8 @@
         },
         {
             "label": "Launch Everest",
-            "type":"shell",
-            "command":"${workspaceFolder}\\..\\..\\Celeste.exe",
+            "type": "shell",
+            "command": "${workspaceFolder}\\..\\..\\Celeste.exe",
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -21,20 +21,41 @@
         },
         {
             "label": "Build and Launch",
-            "type":"shell",
-            "command":"${workspaceFolder}\\build.bat",
-            "args": ["r"],
+            "type": "shell",
+            "command": "${workspaceFolder}\\build.bat",
+            "args": [
+                "r"
+            ],
             "group": {
                 "kind": "test",
                 "isDefault": false
             }
         },
         {
-            "label":"Package",
-            "type":"shell",
-            "command":"${workspaceFolder}\\package.bat",
+            "label": "Package",
+            "type": "shell",
+            "command": "${workspaceFolder}\\package.bat",
             "group": {
                 "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Clean Workspace",
+            "type": "shell",
+            "command": "${workspaceFolder}\\clean.bat",
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Clean Workspace (Plus Extra)",
+            "type": "shell",
+            "command": "${workspaceFolder}\\clean.bat",
+            "args": ["d"],
+            "group": {
+                "kind": "none",
                 "isDefault": false
             }
         }
