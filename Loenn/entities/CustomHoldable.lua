@@ -6,12 +6,15 @@ local customHoldable = {}
 customHoldable.name = "VectorHelper/CustomHoldable"
 customHoldable.depth = 100
 customHoldable.justification = {0.5, 0.5}
-
+customHoldable.fieldOrder = {
+    "x", "y", "spriteDirectory", "killPlayerOnDestroy"
+}
 customHoldable.placements = {
     {
         name = "Custom Holdable",
         data = {
-            spriteDirectory = "objects/resortclutter/yellow_14"
+            spriteDirectory = "objects/resortclutter/yellow_14",
+            killPlayerOnDestroy = false
         }
     }
 }
