@@ -8,7 +8,8 @@ using ..Ahorn, Maple
 @mapdef Entity "VectorHelper/CustomHoldable" CustomHoldable(
 	x::Integer, y::Integer,
 	spriteDirectory::String="objects/resortclutter/yellow_14",
-	killPlayerOnDestroy::Bool=false
+	depth::Integer=100,
+	killPlayerOnDestroy::Bool=false, slowsPlayerDown::Bool=true
 )
 
 #@mapdef Entity "VectorHelper/CustomHoldable" CustomHoldable(
@@ -25,7 +26,7 @@ const placements = Ahorn.PlacementDict(
 	)
 )
 
-Ahorn.editingOrder(entity::CustomHoldable) = String["x", "y", "spriteDirectory", "killPlayerOnDestroy"]
+Ahorn.editingOrder(entity::CustomHoldable) = String["x", "y", "spriteDirectory", "depth", "killPlayerOnDestroy", "slowsPlayerDown"]
 
 function Ahorn.selection(entity::CustomHoldable)
 	x, y = Ahorn.position(entity)
