@@ -1,0 +1,4 @@
+mods.VectorHelper.name=Vector Helper
+entities.VectorHelper/CustomHoldable.placements.name=Custom Holdable
+entities.VectorHelper/CustomHoldable.placements.description=A customizable holdable that works similar to a Theo Crystal
+entities.VectorHelper/CustomHoldable.attributes.description.spriteDirectory=The path to your sprite, Relative to Graphics/Atlases/Gameplay (Without .png) \n This is the sprite that will appear as the Holdable.
