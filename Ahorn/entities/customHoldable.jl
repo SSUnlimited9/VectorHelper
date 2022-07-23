@@ -7,11 +7,10 @@ using ..Ahorn, Maple
 
 @mapdef Entity "VectorHelper/CustomHoldable" CustomHoldable(
 	x::Integer, y::Integer,
-	spriteDirectory::String="objects/resortclutter/yellow_14"
-) # spriteDirectory is the string path relative to Gameplay/ for the sprite
+	spriteDirectory::String="objects/resortclutter/yellow_14",
+	killPlayerOnDestroy::Bool=false
+)
 
-
-# IGNORE THIS
 #@mapdef Entity "VectorHelper/CustomHoldable" CustomHoldable(
 #	x::Integer, y::Integer,
 #	spriteDirectory::String="objects/resortclutter/yellow_14", spriteOffset::String="0,0",
@@ -22,29 +21,25 @@ using ..Ahorn, Maple
 
 const placements = Ahorn.PlacementDict(
 	"Custom Holdable (Vector Helper)" => Ahorn.EntityPlacement(
-		CustomHoldable # The placement for mapping (nothing else is used here since everything is default)
+		CustomHoldable
 	)
 )
 
-Ahorn.editingOrder(entity::CustomHoldable) = String["x", "y", "spriteDirectory"]
-# Makes the entity edit window Display like
-#	X: 					Y:
-#	Sprite Directory
+Ahorn.editingOrder(entity::CustomHoldable) = String["x", "y", "spriteDirectory", "killPlayerOnDestroy"]
 
 function Ahorn.selection(entity::CustomHoldable)
 	x, y = Ahorn.position(entity)
 	sprite = get(entity.data, "spriteDirectory", "objects/resortclutter/yellow_14")
-	# gets the spriteDirectory String from entity data and converts it to "sprite"
-	return Ahorn.getSpriteRectangle(sprite, x, y) # makes the selection the size of the actual Sprite
+
+	return Ahorn.getSpriteRectangle(sprite, x, y)
 end
 
 function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::CustomHoldable)
 	x = Int(get(entity.data, "x", 0))
 	y = Int(get(entity.data, "y", 0))
 	sprite = get(entity.data, "spriteDirectory", "objects/resortclutter/yellow_14")
-	#Same thing as seelections
 
-	Ahorn.drawSprite(ctx, sprite, 0, 0) # Draws the sprite at the center
+	Ahorn.drawSprite(ctx, sprite, 0, 0)
 end
 
 

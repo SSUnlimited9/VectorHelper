@@ -2,41 +2,35 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Celeste.Mod.Entities;
+using Celeste;
 using Monocle;
 
 namespace Celeste.Mod.VectorHelper.Entities
 {
     [CustomEntity("VectorHelper/CustomHoldable")]
-    public class CustomHoldable
+    public class CustomHoldable : Actor
     {
-        public string spriteDirectory;
-        /*
-        public Holdable Hold;
-        private Sprite sprite;
-        private Vector2 previousPosition;
+        public string spriteDirectory; /* The sprite from map */
 
-        public CustomHoldable(Vector2 position) : base(position)
-        {
-            this.previousPosition = position;
-            base.Collider = new Hitbox(8f, 10f, -4f, -10f);
-            base.Add(this.sprite = GFX.SpriteBank.Create("theo_crystal"));
-            this.sprite.Scale.X = -1f;
-            base.Add(this.Hold = new Holdable(0.1f));
-            this.Hold.PickupCollider = new Hitbox(16f, 22f, -8f, -16f);
-        }
+        public Image HoldableSprite; /* The sprite for rendering with "Image" */
 
-        public CustomHoldable (EntityData data, Vector2 offset)
-        {
+        public Holdable Hold; /* Do I really need to comment this? */
 
-        }
-         
-        public CustomHoldable (Vector2 position, string spriteDirectory) : base(position)
-        {
-            
-        }
-        */
+        public Player player;
 
         
+        public CustomHoldable(EntityData data, Vector2 offset) : base(data.Position + offset){}
 
+        public CustomHoldable(Vector2 position, string spriteDirectory) : base(position)
+        {
+            Depth = 100;
+            Collider = new Hitbox(12, 12, 0, 0); /* This collider size is temporary */
+            MTexture holdableSprite = GFX.Game[spriteDirectory];
+            Add(HoldableSprite = new Image(holdableSprite));
+        }
+        public override void Added(Scene scene)
+        {
+            base.Added(scene);
+        }
     }
 }

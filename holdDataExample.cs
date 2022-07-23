@@ -1,6 +1,3 @@
-/* (Code from FactoryHelper)
-I guess we'll use this for making the custom Holdables
-
 using Celeste;
 using Celeste.Mod.Entities;
 using FactoryHelper.Components;
