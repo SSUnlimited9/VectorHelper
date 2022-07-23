@@ -2,7 +2,7 @@ using Celeste;
 using Celeste.Mod.Entities;
 using FactoryHelper.Components;
 using Microsoft.Xna.Framework;
-using Monocle;
+using Monocle; /* This is an example of Holdable we are using */
 using System;
 
 namespace FactoryHelper.Entities
