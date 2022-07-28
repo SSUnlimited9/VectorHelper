@@ -5,7 +5,7 @@ using ..Ahorn, Maple
 	x::Integer, y::Integer,
 	width::Integer=Maple.defaultTriggerWidth, height::Integer=Maple.defaultTriggerHeight,
 	delay::Number=1.0, ifFlag::String="", notFlag="", flagAfterDeath="",
-	ignoreInvincibleAssist::Bool=false
+	ignoreInvincibleAssist::Bool=false, registerDeathInSave::Bool=false
 )
 
 const placements = Ahorn.PlacementDict(

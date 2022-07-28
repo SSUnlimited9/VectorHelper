@@ -19,8 +19,6 @@ const placements = Ahorn.PlacementDict(
 
 Ahorn.editingOrder(entity::CustomHoldableBasic) = String["x", "y", "spriteDirectory", "spriteOffset", "spriteOverlay", "spriteOverlayOffset","depth", "killPlayerOnDestroy", "slowsPlayerDown"]
 
-#Ahorn.editingOrder(entity::CustomHoldableBasic) = String["x", "y", "spriteDirectory", "depth", "killPlayerOnDestroy", "slowsPlayerDown"]
-
 function Ahorn.selection(entity::CustomHoldableBasic)
 	x, y = Ahorn.position(entity)
 	sprite = get(entity.data, "spriteDirectory", "objects/resortclutter/yellow_14")
