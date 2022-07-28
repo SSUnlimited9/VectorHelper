@@ -3,10 +3,20 @@
 # Entities
 
 # CustomHoldables
-placements.entities.VectorHelper/CustomHoldable.tooltips.spriteDirectory=The path to your sprite, Relative to Graphics/Atlases/Gameplay (Without .png) \n This is the sprite that will appear as the Holdable.
-placements.entities.VectorHelper/CustomHoldable.tooltips.depth=The depth of the Holdable (Whether its infront or behind) \n Can be a negative or positive number.
-placements.entities.VectorHelper/CustomHoldable.tooltips.killPlayerOnDestroy=Kill the player when the Holdable is Killed/Destroyed.
-placements.entities.VectorHelper/CustomHoldable.tooltips.slowsPlayerDown=Whether the player is slower while holding It.
+
+# Basic
+placements.entities.VectorHelper/CustomHoldable.tooltips.spriteDirectory=The path to your sprite, Relative to Graphics/Atlases/Gameplay (without .png)
+placements.entities.VectorHelper/CustomHoldable.tooltips.spriteOffset=Offset of the sprite in format of x,y
+placements.entities.VectorHelper/CustomHoldable.tooltips.spriteOverlay=Same as 'Sprite Directory' but as an overlay \nMultiple overlays can be added by separating each path with '|'\n\n(Ex. objects/resortclutter/yellow_14|collectables/goldberry/idle00)\nUp to 32 overlays can be added
+placements.entities.VectorHelper/CustomHoldable.tooltips.spriteOverlayOffset=Same as 'Sprite Offset' but each Offset is separated by '|'\n\nExample with 2 overlays\n(objects/resortclutter/yellow_14|collectables/goldberry/idle00)\n(12,-5|24,7)\n\nKeep In mind If you have multiple overlays but not multiple offset entrys the overlays will be centered automatically
+placements.entities.VectorHelper/CustomHoldable.tooltips.killPlayerOnDestroy=Whether the player should die If the Holdable is Killed/Destroyed\n(Voided, Crushed, Etc)
+placements.entities.VectorHelper/CustomHoldable.tooltips.slowsPlayerDown=Whether the player should be slower while holding the object
+
+
+
+
+
+
 
 
 
