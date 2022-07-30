@@ -5,7 +5,7 @@
     <TargetFrameworks>net452</TargetFrameworks>
     <AssemblyName>VectorHelper</AssemblyName>
     <RootNamespace>Celeste.Mod.VectorHelper</RootNamespace>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>9</LangVersion>
     <CelesteGamePath Condition="'$(CELESTEGAMEPATH)' == ''">..\..</CelesteGamePath>
   </PropertyGroup>
 
