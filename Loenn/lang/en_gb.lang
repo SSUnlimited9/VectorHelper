@@ -9,7 +9,7 @@ triggers.VectorHelper/DelayKillTrigger.placements.description=Kills the player a
 triggers.VectorHelper/DelayKillTrigger.attributes.description.delay=The delay before the player is killed. A float minimum 0
 triggers.VectorHelper/DelayKillTrigger.attributes.description.resetDelayOnLeave=If true, the delay will be reset if the player leaves the zone
 triggers.VectorHelper/DelayKillTrigger.attributes.description.resetDelayIfInvincible=If true, the delay will be reset if the player uses the "Invincible" assist
-triggers.VectorHelper/DelayKillTrigger.attributes.description.addToDeathCount=If true, the death count will be incremented triggered
+triggers.VectorHelper/DelayKillTrigger.attributes.description.addToDeathCount=If true, the death count will be incremented when triggered
 triggers.VectorHelper/DelayKillTrigger.attributes.description.ignoreInvincibleAssist=If true, the player will be killed even if they use the "Invincible" assist
 
 triggers.VectorHelper/CustomHoldableSpawner.placements.name=Custom Holdable Spawner
