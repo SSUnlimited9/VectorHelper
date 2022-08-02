@@ -7,7 +7,8 @@ using ..Ahorn, Maple
 @mapdef Entity "VectorHelper/BasicCustomHoldable" BasicCustomHoldable(
 	x::Integer, y::Integer,
 	spriteDirectory::String="objects/resortclutter/yellow_14", spriteOffset::String="0,0",
-	visualDepth::Integer=100, linkedToPlayer::Bool=false, slowsPlayerDown::Bool=false
+	visualDepth::Integer=100, linkedToPlayer::Bool=false, slowsPlayerDown::Bool=false,
+	spawnId::String="", interactionId::String=""
 )
 
 const placements = Ahorn.PlacementDict(
@@ -16,7 +17,11 @@ const placements = Ahorn.PlacementDict(
 	)
 )
 
-Ahorn.editingOrder(entity::BasicCustomHoldable) = String["x", "y", "spriteDirectory", "spriteOffset", "visualDepth", "linkedToPlayer", "slowsPlayerDown"]
+Ahorn.editingOrder(entity::BasicCustomHoldable) = String[
+	"x", "y",
+	"spriteDirectory", "spriteOffset",
+	"visualDepth", "linkedToPlayer", "slowsPlayerDown",
+	"spawnId", "interactionId"]
 
 function Ahorn.selection(entity::BasicCustomHoldable)
 	x, y = Ahorn.position(entity)
@@ -32,9 +37,9 @@ function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::BasicCustomHoldable
 	offset = tryparse.(Int, split(get(entity.data, "spriteOffset", "0,0"), ','))
 
 	try
-		Ahorn.drawSprite(ctx, sprite, offset[1], offset[2])
+		Ahorn.renderSprite(ctx, sprite, offset[1], offset[2])
 	catch
-		Ahorn.drawSprite(ctx, sprite, 0, 0)
+		Ahorn.renderSprite(ctx, sprite, 0, 0)
 	end
 end
 

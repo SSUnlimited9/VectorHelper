@@ -11,7 +11,7 @@ namespace Celeste.Mod.VectorHelper.Entities
 {
     [TrackedAs(typeof(Actor))]
     [Tracked]
-    [CustomEntity(new string[] {"VectorHelper/BasicCustomHoldable"})]
+    [CustomEntity("VectorHelper/BasicCustomHoldable")]
     public class CustomHoldable : Actor
     {
         
@@ -19,8 +19,9 @@ namespace Celeste.Mod.VectorHelper.Entities
         private int visualDepth;
         private bool linkedToPlayer, slowsPlayerDown;
         private Image _holdableSprite;
-        private Vector2 spriteDisplacement;
+        private Vector2 spriteDisplacement, prevLiftSpeed, Speed;
         private Holdable Hold;
+        private float noGravityTimer;
         public CustomHoldable(EntityData data, Vector2 offset) : this( data.Position + offset,
             data.Attr("spriteDirectory"), data.Attr("spriteOffset"), data.Int("visualDepth"),
             data.Bool("linkedToPlayer"), data.Bool("slowsPlayerDown")
@@ -41,6 +42,8 @@ namespace Celeste.Mod.VectorHelper.Entities
             Hold.PickupCollider = new Hitbox(24f, 24f, -12f, -12f);
             Hold.SlowFall = false;
             Hold.SlowRun = _slowsPlayerDown;
+            Hold.SpeedGetter = (() => Speed);
+            Add(new MirrorReflection());
         }
 
         public override void Added(Scene scene)
@@ -51,7 +54,6 @@ namespace Celeste.Mod.VectorHelper.Entities
         public override void Update()
         {
             base.Update();
-            
         }
     }
 }

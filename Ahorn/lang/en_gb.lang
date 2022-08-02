@@ -8,6 +8,9 @@ placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spriteOffset=Offse
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.visualDepth=Depth of the holdable\nHigher depth values will result in it being shown behind some objects while Lower values will do the opposite.
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.linkedToPlayer=If the holdable gets killed/destroyed the player will die with it.
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.slowsPlayerDown=Whether the player will be slower while holding the object.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spawnId=Id used for spawning the holdable\nSeparate multiple ids with ","\nIf any Id is present the holdable will not spawn unless there is a spawner.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.interactionId=Id used for custom interactions (Buttons/Switches/etc.)\nSeparate multiple ids with ",".
+
 
 # Triggers
 
