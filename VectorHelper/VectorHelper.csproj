@@ -6,7 +6,7 @@
     <AssemblyName>VectorHelper</AssemblyName>
     <RootNamespace>Celeste.Mod.VectorHelper</RootNamespace>
     <LangVersion>9</LangVersion>
-    <CelesteGamePath Condition="'$(CELESTEGAMEPATH)' == ''">..\..</CelesteGamePath>
+    <CelesteGamePath Condition="'$(CELESTEGAMEPATH)' == ''">..\..\..</CelesteGamePath>
   </PropertyGroup>
 
   <!--Disable "Copy Local" for all references-->
