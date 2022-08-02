@@ -3,13 +3,11 @@
 # Entities
 
 # Custom Holdable (Basic)
-placements.entities.VectorHelper/CustomHoldable.tooltips.spriteDirectory=The path to your sprite, Relative to Graphics/Atlases/Gameplay (without .png)
-placements.entities.VectorHelper/CustomHoldable.tooltips.spriteOffset=Offset of the sprite in format of x,y
-placements.entities.VectorHelper/CustomHoldable.tooltips.spriteOverlay=Same as "Sprite Directory" but as an overlay \nMultiple overlays can be added by separating each path with "|"\n\n(Ex. objects/resortclutter/yellow_14|collectables/goldberry/idle00)\nUp to 32 overlays can be added
-placements.entities.VectorHelper/CustomHoldable.tooltips.spriteOverlayOffset=Same as "Sprite Offset" but each Offset is separated by "|"\n\nExample with 2 overlays\n(objects/resortclutter/yellow_14|collectables/goldberry/idle00)\n(12,-5|24,7)\n\nKeep In mind If you have multiple overlays but not multiple offset entrys the overlays will be centered automatically
-placements.entities.VectorHelper/CustomHoldable.tooltips.killPlayerOnDestroy=Whether the player should die If the Holdable is Killed/Destroyed\n(Voided, Crushed, Etc)
-placements.entities.VectorHelper/CustomHoldable.tooltips.slowsPlayerDown=Whether the player should be slower while holding the object
-
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spriteDirectory=The path to your sprite, Relative to graphics/Atlases/Gameplay (without .png)
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spriteOffset=Offset of the sprite in format of x,y.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.visualDepth=Depth of the holdable\nHigher depth values will result in it being shown behind some objects while Lower values will do the opposite.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.linkedToPlayer=If the holdable gets killed/destroyed the player will die with it.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.slowsPlayerDown=Whether the player will be slower while holding the object.
 
 # Triggers
 

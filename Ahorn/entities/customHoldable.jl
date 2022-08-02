@@ -31,13 +31,6 @@ function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::BasicCustomHoldable
 	sprite = get(entity.data, "spriteDirectory", "objects/resortclutter/yellow_14")
 	offset = tryparse.(Int, split(get(entity.data, "spriteOffset", "0,0"), ','))
 
-	if !isassigned(offset, 1)
-		throw("The first offset is not assigned")
-	else
-		if !isa(offset[1], Int)
-			throw("first offset is not an Integer")
-	end
-
 	try
 		Ahorn.drawSprite(ctx, sprite, offset[1], offset[2])
 	catch
