@@ -1,5 +1,5 @@
 - Name: VectorHelper
-  Version: 0.0.1-dev
+  Version: 0.0.3-dev
   DLL: VectorHelper/bin/Debug/net452/VectorHelper.dll
   Dependencies:
     - Name: Everest

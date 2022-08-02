@@ -1,3 +1,5 @@
+# File written by SSUnlimited
+
 module VectorHelperDelayedKillTrigger
 
 using ..Ahorn, Maple
