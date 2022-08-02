@@ -10,7 +10,7 @@ customHoldable.fieldOrder = {
 }
 customHoldable.placements = {
     {
-        name = "Custom Holdable",
+        name = "Custom Holdable (Basic)",
         data = {
             spriteDirectory = "objects/resortclutter/yellow_14",
             spriteOffset = "0,0",
