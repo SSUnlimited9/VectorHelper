@@ -1,16 +1,16 @@
 --VectorHelper Delayed Kill trigger (Loenn Integration)
 --Written by KthVeg
 
-local DelayKillTrigger = {}
+local DelayedKillTrigger = {}
 
-DelayKillTrigger.name = "VectorHelper/DelayedKillTrigger"
-DelayKillTrigger.fieldOrder = {
+DelayedKillTrigger.name = "VectorHelper/DelayedKillTrigger"
+DelayedKillTrigger.fieldOrder = {
     "x", "y",
     "width", "height",
     "delay", "ignoreInvincibleAssist",
     "addToDeathCount", "resetDelayOnLeave"
 }
-DelayKillTrigger.placements = {
+DelayedKillTrigger.placements = {
     {
         name = "Kill Trigger (Delayed)",
         data = {
@@ -23,4 +23,4 @@ DelayKillTrigger.placements = {
     }
 }
 
-return DelayKillTrigger
+return DelayedKillTrigger
