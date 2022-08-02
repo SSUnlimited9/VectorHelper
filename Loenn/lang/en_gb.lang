@@ -3,3 +3,15 @@ entities.VectorHelper/CustomHoldable.placements.name=Custom Holdable
 entities.VectorHelper/CustomHoldable.placements.description=A customizable holdable that works similar to a Theo Crystal
 entities.VectorHelper/CustomHoldable.attributes.description.spriteDirectory=The path to your sprite, Relative to Graphics/Atlases/Gameplay (Without .png) \n This is the sprite that will appear as the Holdable.
 entities.VectorHelper/CustomHoldable.attributes.description.killPlayerOnDestroy=Kill the player when the Holdable is Killed/Destroyed
+
+triggers.VectorHelper/DelayKillTrigger.placements.name=Delayed Kill Trigger
+triggers.VectorHelper/DelayKillTrigger.placements.description=Kills the player after a select delay
+triggers.VectorHelper/DelayKillTrigger.attributes.description.delay=The delay before the player is killed. A float minimum 0
+triggers.VectorHelper/DelayKillTrigger.attributes.description.resetDelayOnLeave=If true, the delay will be reset if the player leaves the zone
+triggers.VectorHelper/DelayKillTrigger.attributes.description.resetDelayIfInvincible=If true, the delay will be reset if the player uses the "Invincible" assist
+triggers.VectorHelper/DelayKillTrigger.attributes.description.addToDeathCount=If true, the death count will be incremented when triggered
+triggers.VectorHelper/DelayKillTrigger.attributes.description.ignoreInvincibleAssist=If true, the player will be killed even if they use the "Invincible" assist
+
+triggers.VectorHelper/CustomHoldableSpawner.placements.name=Custom Holdable Spawner
+triggers.VectorHelper/CustomHoldableSpawner.placements.description=Places a Custom Holdable at the location you specify
+triggers.VectorHelper/CustomHoldableSpawner.attributes.description

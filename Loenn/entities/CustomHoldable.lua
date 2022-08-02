@@ -3,7 +3,7 @@
 
 local customHoldable = {}
 
-customHoldable.name = "VectorHelper/CustomHoldable"
+customHoldable.name = "VectorHelper/CustomHoldableBasic"
 customHoldable.depth = 100
 customHoldable.justification = {0.5, 0.5}
 customHoldable.fieldOrder = {
@@ -22,6 +22,8 @@ customHoldable.placements = {
 function customHoldable.texture(room, entity)
     return entity.spriteDirectory
 end
+
+
 
 
 return customHoldable
