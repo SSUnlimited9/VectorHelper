@@ -6,7 +6,7 @@ local customHoldable = {}
 customHoldable.name = "VectorHelper/BasicCustomHoldable"
 customHoldable.justification = {0.5, 0.5}
 customHoldable.fieldOrder = {
-    "x", "y", "spriteDirectory", "spriteOffset", "entityDepth", "linkedToPlayer", "slowsPlayerDown"
+    "x", "y", "spriteDirectory", "spriteOffset", "visualDepth", "linkedToPlayer", "slowsPlayerDown"
 }
 customHoldable.placements = {
     {
@@ -14,9 +14,11 @@ customHoldable.placements = {
         data = {
             spriteDirectory = "objects/resortclutter/yellow_14",
             spriteOffset = "0,0",
-            entityDepth = 100,
+            visualDepth = 100,
             linkedToPlayer = false,
-            slowsPlayerDown = false
+            slowsPlayerDown = false,
+            spawnId = "",
+            interactionId = ""
         }
     }
 }
@@ -26,7 +28,7 @@ function customHoldable.texture(room, entity)
 end
 
 function customHoldable.depth(room, entity)
-    return entity.entityDepth
+    return entity.visualDepth
 end
 
 
