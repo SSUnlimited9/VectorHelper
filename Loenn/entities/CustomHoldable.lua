@@ -39,12 +39,11 @@ customHoldable.placements = {
 }
 
 function customHoldable.sprite(room, entity)
-    local spriteOverrides = entity
-    spriteOverrides.x, spriteOverrides.y = (entity.x + (Split(entity.spriteOffset, ",")[1] or 0)) or 0, (entity.y + (Split(entity.spriteOffset, ",")[2] or 0)) or 0
-    spriteOverrides.spriteDirectory = entity.spriteDirectory or "objects/resortclutter/yellow_14"
+    entity.x, entity.y = (entity.x + (Split(entity.spriteOffset, ",")[1] or 0)) or 0, (entity.y + (Split(entity.spriteOffset, ",")[2] or 0)) or 0
+    entity.spriteDirectory = entity.spriteDirectory or "objects/resortclutter/yellow_14"
     local sprites = {}
 
-    table.insert(sprites, drawableSprite.fromTexture(spriteOverrides.spriteDirectory, spriteOverrides))
+    table.insert(sprites, drawableSprite.fromTexture(entity.spriteDirectory, entity))
 
     return sprites
 end
