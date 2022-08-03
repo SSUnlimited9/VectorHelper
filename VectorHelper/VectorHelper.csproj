@@ -18,31 +18,18 @@
   <ItemGroup>
     <PackageReference Include="MonoMod" Version="21.08.19.01" />
     <PackageReference Include="MonoMod.RuntimeDetour" Version="21.08.19.01" />
-  </ItemGroup>
 
-  <ItemGroup>
     <Reference Include="Celeste">
       <HintPath>$(CELESTEGAMEPATH)\Celeste.exe</HintPath>
     </Reference>
-    <Reference Include="FNA">
-      <HintPath>$(CELESTEGAMEPATH)\FNA.dll</HintPath>
-    </Reference>
     <Reference Include="MMHOOK_Celeste">
       <HintPath>$(CELESTEGAMEPATH)\MMHOOK_Celeste.dll</HintPath>
+    </Reference>
+    <Reference Include="FNA">
+      <HintPath>$(CELESTEGAMEPATH)\FNA.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>$(CELESTEGAMEPATH)\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
-
-  <Choose>
-    <When Condition="'$(OS)' != 'Windows_NT' Or Exists('$(CELESTEGAMEPATH)\FNA.dll')">
-      <ItemGroup>
-        <Reference Include="FNA" HintPath="$(CELESTEGAMEPATH)\FNA.dll" />
-      </ItemGroup>
-    </When>
-    
-    <Otherwise />
-  </Choose>
-  
 </Project>
