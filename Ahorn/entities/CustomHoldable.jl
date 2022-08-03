@@ -22,7 +22,8 @@ Ahorn.editingOrder(entity::BasicCustomHoldable) = String[
 	"spriteDirectory", "spriteOffset",
 	"visualDepth", "linkedToPlayer", "slowsPlayerDown",
 	"spawnId", "interactionId",
-	"modifierId"]
+	"modifierId"
+]
 
 function Ahorn.selection(entity::BasicCustomHoldable)
 	x, y = Ahorn.position(entity)
@@ -37,10 +38,11 @@ function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::BasicCustomHoldable
 	sprite = get(entity.data, "spriteDirectory", "objects/resortclutter/yellow_14")
 	offset = tryparse.(Int, split(get(entity.data, "spriteOffset", "0,0"), ','))
 
+	# Draw the sprite with offset unless the offset is invalid then draw the sprite without offset
 	try
-		Ahorn.renderSprite(ctx, sprite, offset[1], offset[2])
+		Ahorn.drawSprite(ctx, sprite, offset[1], offset[2])
 	catch
-		Ahorn.renderSprite(ctx, sprite, 0, 0)
+		Ahorn.drawSprite(ctx, sprite, 0, 0)
 	end
 end
 
