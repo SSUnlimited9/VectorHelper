@@ -8,7 +8,7 @@ using ..Ahorn, Maple
 	x::Integer, y::Integer,
 	spriteDirectory::String="objects/resortclutter/yellow_14", spriteOffset::String="0,0",
 	visualDepth::Integer=100, linkedToPlayer::Bool=false, slowsPlayerDown::Bool=false,
-	spawnId::String="", interactionId::String=""
+	spawnId::String="", interactionId::String="", modifierId::String=""
 )
 
 const placements = Ahorn.PlacementDict(
@@ -21,7 +21,8 @@ Ahorn.editingOrder(entity::BasicCustomHoldable) = String[
 	"x", "y",
 	"spriteDirectory", "spriteOffset",
 	"visualDepth", "linkedToPlayer", "slowsPlayerDown",
-	"spawnId", "interactionId"]
+	"spawnId", "interactionId",
+	"modifierId"]
 
 function Ahorn.selection(entity::BasicCustomHoldable)
 	x, y = Ahorn.position(entity)
