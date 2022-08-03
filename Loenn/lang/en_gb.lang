@@ -8,6 +8,7 @@ entities.VectorHelper/CustomHoldable.attributes.description.spriteDirectory=The 
 entities.VectorHelper/CustomHoldable.attributes.description.killPlayerOnDestroy=Kill the player when the Holdable is Killed/Destroyed
 entities.VectorHelper/CustomHoldable.attributes.description.spawnId=Id used for spawning the holdable\nSeparate multiple ids with ","\nIf any Id is present the holdable will not spawn unless there is a spawner.
 entities.VectorHelper/CustomHoldable.attributes.description.interactionId=Id used for custom interactions (Buttons/Switches/etc.)\nSeparate multiple ids with ",".
+entities.VectorHelper/CustomHoldable.attributes.description.spriteOffset=Offset of the sprite in format of x,y.
 
 # Triggers
 
