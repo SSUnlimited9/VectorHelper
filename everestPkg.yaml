@@ -4,7 +4,7 @@
 # and updated accordingly, but DO NOT change the DLL path!
 
 - Name: VectorHelper
-  Version: 0.0.1
+  Version: 0.0.2
   DLL: VectorHelper.dll # Do not change this line
   Dependencies:
     - Name: Everest

@@ -129,6 +129,11 @@ namespace Celeste.Mod.VectorHelper.Entities
             {
                 (data.Hit as DashSwitch).OnDashCollide(null, Vector2.UnitY * (float)Math.Sign(Speed.Y));
             }
+            if (Speed.Y > 120f && !(data.Hit is DashSwitch))
+            {
+                Speed.Y = -.45f;
+                return;
+            }
             Speed.Y = 0f;
         }
         private void OnPickup(){
@@ -146,11 +151,26 @@ namespace Celeste.Mod.VectorHelper.Entities
             {
                 noGravityTimer = .1f;
             }
-            Player player = Scene.Tracker.GetEntity<Player>();
         }
         public override bool IsRiding(Solid solid)
         {
             return Speed.Y == 0f && base.IsRiding(solid);
+        }
+
+        public void spawnHoldable()
+        {
+            Player player = Scene.Tracker.GetEntity<Player>();
+            CustomHoldable customHoldable = Scene.Tracker.GetEntity<CustomHoldable>();
+            if (player != null)
+            {
+            }
+            /*
+            Scene.Add(Entity[] = new CustomHoldable(
+                Position + Vector2.UnitY * -20f,
+                spriteDirectory, spriteOffset, visualDepth,
+                linkedToPlayer, slowsPlayerDown,
+                spawnId, interactionId, modifierId
+            )); */
         }
     }
 }

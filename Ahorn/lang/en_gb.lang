@@ -12,6 +12,17 @@ placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spawnId=Id used fo
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.interactionId=Id used for custom interactions (Buttons/Switches/etc.)\nSeparate multiple ids with ",".
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.modifierId=Id for modifying the holdable when passing through a modifier trigger or holdable modifier.
 
+# Controllers
+
+# Variable Controller
+placements.entities.VectorHelper/VariableController.tooltips.type=Whether you store data in a variable or an array.
+placements.entities.VectorHelper/VariableController.tooltips.variableName=The name of the variable/array.
+placements.entities.VectorHelper/VariableController.tooltips.arrayLength=The length of the array.\nYou can use a variable with an Integer for the length.
+placements.entities.VectorHelper/VariableController.tooltips.dataType=String: holds text.\nInteger: holds a number.\nFloat/Double: Like an Integer but supports decimals.\nBoolean holds a true or false value.
+placements.entities.VectorHelper/VariableController.tooltips.value=The initial value of the variable/array\nIf you are using an array use "," to separate values into an array.
+placements.entities.VectorHelper/VariableController.tooltips.flag=Flag required to declare the variable/array.\n Use "!" to set as a "Not Flag".
+placements.entities.VectorHelper/VariableController.tooltips.registerInSave=Whether the variable/array will be saved in the save file.\nIf not then the variable/array will only be active for the current session.
+
 # Triggers
 
 # Kill Trigger (Delayed)
