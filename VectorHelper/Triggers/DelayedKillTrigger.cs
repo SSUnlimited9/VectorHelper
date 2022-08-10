@@ -33,7 +33,7 @@ namespace Celeste.Mod.VectorHelper.Triggers
         public override void OnStay(Player player)
         {
             base.OnStay(player);
-            if (resetDelayIfInvincible && SaveData.Instance.Assists.Invincible) { delay = iDelay + 1; }
+            if (resetDelayIfInvincible && SaveData.Instance.Assists.Invincible) { delay = iDelay++; }
             if (delay > 0 )
             {
                 delay -= Engine.DeltaTime;

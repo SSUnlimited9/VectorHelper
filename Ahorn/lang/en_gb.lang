@@ -3,25 +3,28 @@
 # Entities
 
 # Custom Holdable (Basic)
-placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spriteDirectory=The path to your sprite, Relative to graphics/Atlases/Gameplay (without .png)
-placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spriteOffset=Offset of the sprite in format of x,y.
-placements.entities.VectorHelper/BasicCustomHoldable.tooltips.visualDepth=Depth of the holdable\nHigher depth values will result in it being shown behind some objects while Lower values will do the opposite.
-placements.entities.VectorHelper/BasicCustomHoldable.tooltips.linkedToPlayer=If the holdable gets killed/destroyed the player will die with it.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spriteDirectory=The path to your sprite, Relative to "Graphics/Atlases/Gameplay" (without .png)
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spriteOffset=Offset of the sprite in "offset X,offset Y"
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.visualDepth=Depth of the sprite\nHigher values will result in it being drawn more behind other sprites/objects While lower values will do the opposite.\n\nThe first value is the holdable while not held.\nThe second value is the holdable while held.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.linkedToPlayer=If the holdable gets killed/destroyed the player will die with it.\nThis will also keep the holdable within the Scene bounds (Unless the player is holding it).
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.slowsPlayerDown=Whether the player will be slower while holding the object.
-placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spawnId=Id used for spawning the holdable\nSeparate multiple ids with ","\nIf any Id is present the holdable will not spawn unless there is a spawner.
-placements.entities.VectorHelper/BasicCustomHoldable.tooltips.interactionId=Id used for custom interactions (Buttons/Switches/etc.)\nSeparate multiple ids with ",".
-placements.entities.VectorHelper/BasicCustomHoldable.tooltips.modifierId=Id for modifying the holdable when passing through a modifier trigger or holdable modifier.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spawnsFloating=Whether the holdable will spawn floating in the air\nMuch like the jellyfish.
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spawnId=Id used for custom spawners.\nSeparate multiple ids with ","
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.interactionId=Id used for interactions with special/custom entities.\nIf any id is present, the holdable wont spawn normally (Unless "$$" is specified as the last Id).\nSeparate multiple ids with ","
+placements.entities.VectorHelper/BasicCustomHoldable.tooltips.modifierId=Id used for modifying this holdable will passing through a Holdable/Entity modifier.\nSeparate multiple ids with ","
+
 
 # Controllers
 
 # Variable Controller
-placements.entities.VectorHelper/VariableController.tooltips.type=Whether you store data in a variable or an array.
-placements.entities.VectorHelper/VariableController.tooltips.variableName=The name of the variable/array.
-placements.entities.VectorHelper/VariableController.tooltips.arrayLength=The length of the array.\nYou can use a variable with an Integer for the length.
-placements.entities.VectorHelper/VariableController.tooltips.dataType=String: holds text.\nInteger: holds a number.\nFloat/Double: Like an Integer but supports decimals.\nBoolean holds a true or false value.
-placements.entities.VectorHelper/VariableController.tooltips.value=The initial value of the variable/array\nIf you are using an array use "," to separate values into an array.
-placements.entities.VectorHelper/VariableController.tooltips.flag=Flag required to declare the variable/array.\n Use "!" to set as a "Not Flag".
-placements.entities.VectorHelper/VariableController.tooltips.registerInSave=Whether the variable/array will be saved in the save file.\nIf not then the variable/array will only be active for the current session.
+#placements.entities.VectorHelper/VariableController.tooltips.type=Whether you store data in a variable or an array.
+#placements.entities.VectorHelper/VariableController.tooltips.variableName=The name of the variable/array.
+#placements.entities.VectorHelper/VariableController.tooltips.arrayLength=The length of the array.\nYou can use a variable with an Integer for the length.
+#placements.entities.VectorHelper/VariableController.tooltips.dataType=String: holds text.\nInteger: holds a number.\nFloat/Double: Like an Integer but supports decimals.\nBoolean holds a true or false value.
+#placements.entities.VectorHelper/VariableController.tooltips.value=The initial value of the variable/array\nIf you are using an array use "," to separate values into an array.
+#placements.entities.VectorHelper/VariableController.tooltips.flag=Flag required to declare the variable/array.\n Use "!" to set as a "Not Flag".
+#placements.entities.VectorHelper/VariableController.tooltips.registerInSave=Whether the variable/array will be saved in the save file.\nIf not then the variable/array will only be active for the current session.
+
 
 # Triggers
 
