@@ -13,6 +13,34 @@ placements.entities.VectorHelper/BasicCustomHoldable.tooltips.spawnId=Id used fo
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.interactionId=Id used for interactions with special/custom entities.\nIf any id is present, the holdable wont spawn normally (Unless "$$" is specified as the last Id).\nSeparate multiple ids with ","
 placements.entities.VectorHelper/BasicCustomHoldable.tooltips.modifierId=Id used for modifying this holdable will passing through a Holdable/Entity modifier.\nSeparate multiple ids with ","
 
+# Custom Holdable (Basic) (Animated)
+placements.entities.VectorHelper/BasicCustomHoldableAnimated.tooltips.spriteDirectory=The path to your sprite, Relative to "Graphics/Atlases/Gameplay"\n\nDepending on the type of animated sprite you want, you'll need different prefixes and path.\n\nBasic: all that is required for this is a simple path\n(Ex. "VectorHelper/holdable/sprialAnim")\nThis will make the path "VectorHelper/holdable/sprialAnim/idleXX" with XX being the number of frames and it loops endlessly.\n\nAlt: Requires "$" at the beginning of the path but allows for a custom animation suffix (Ex "$VectorHelper/holdable/pulseAnim/pulse")\nThis will make the path "VectorHelper/holdable/pulseAnim/pulseXX" with XX being the number of frames and it loops endlessly.
+placements.entities.VectorHelper/BasicCustomHoldableAnimated.tooltips.spriteOffset=Offset of the sprite in "offset X,offset Y"
+placements.entities.VectorHelper/BasicCustomHoldableAnimated.tooltips.animationConfig=Accepts 2 values (Separate with ",").\nDelay between frames.\n(Optional) Animation Id (Doesnt actually serve a purpose)
+
+# Sentient Intro Car
+placements.entities.VectorHelper/SentientIntroCar.tooltips.speedMultiplier=The amount to multiply the speed of the car by. (Horizontal speed only)\nAny negative valve will result in the car's speed being relative to the player's speed.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.stunSpeed=The speed the car will move at when stunned.\n(The car will gradually slow down to this speed)
+placements.entities.VectorHelper/SentientIntroCar.tooltips.active=Whether the car starts active or not.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.invincible=Whether the car will be immune to damage (Including being stunned by player)
+placements.entities.VectorHelper/SentientIntroCar.tooltips.xrayVision=Whether the car can detect the player through solids (Tiles, Walls, Grounds, etc)
+placements.entities.VectorHelper/SentientIntroCar.tooltips.onlyDetectOnYAxis=Changes detection to infront of the car.\n(Size affected by Y Axis Detection Range Low and High)
+placements.entities.VectorHelper/SentientIntroCar.tooltips.idleRoam=Whether the car will roam.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.silent=Becomes completely silent.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.left=Whether the car starts facing left.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.detectionRangeMin=The distance the car will detect the player from.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.detectionRangeMax=The distance the car will have a chance to detect the player from.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.chaseDelay=The delay before the car chases the player when triggered.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.chaseToIdleDelay=The delay before the car goes to idle after losing the player.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.yAxisDetectionRangeLow=The lower size of the detection range (Only Detect On Y Axis)
+placements.entities.VectorHelper/SentientIntroCar.tooltips.yAxisDetectionRangeHigh=The higher size of the detection range (Only Detect On Y Axis)
+placements.entities.VectorHelper/SentientIntroCar.tooltips.idleColor=Color of the headlights when idle.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.chaseColor=Color of the headlights when chasing the player.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.stunColor=Color of the headlights when stunned.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.stunDurationMin=The minimum random stun duration.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.stunDurationMax=The maximum random stun duration.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.activateSound=Sound when the car Activates/Turns on.
+placements.entities.VectorHelper/SentientIntroCar.tooltips.deactivateSound=Sound when the car Deactivates/Turns off.
 
 # Controllers
 
