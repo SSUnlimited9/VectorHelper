@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,56 +15,58 @@ namespace Celeste.Mod.VectorHelper.Entities
     [CustomEntity("VectorHelper/BasicCustomHoldable")]
     public class CustomHoldable : Actor
     {
-        private string spriteDirectory, spriteOffset, spawnId, interactionId, modifierId;
-        private int visualDepth;
-        private bool linkedToPlayer, slowsPlayerDown;
-        private Image holdableSprite;
-        private Vector2 spriteDisplacement, prevLiftSpeed, Speed;
-        private Holdable Hold;
+        private string spriteDirectory;
+        private int[] spriteOffset, visualDepth;
+        private bool linkedToPlayer, slowsPlayerDown, spawnsFloating;
         private float noGravityTimer;
-        private Collision onCollideH, onCollideV;    
-        public CustomHoldable(EntityData data, Vector2 offset) : this( data.Position + offset,
-            data.Attr("spriteDirectory"), data.Attr("spriteOffset"), data.Int("visualDepth"),
-            data.Bool("linkedToPlayer"), data.Bool("slowsPlayerDown"),
-            data.Attr("spawnId"), data.Attr("interactionId"),
-            data.Attr("modifierId")
-        ){}
+        private string spawnId, interactionId, modifierId;
 
-        public CustomHoldable( Vector2 position,
-            string _spriteDirectory, string _spriteOffset, int _visualDepth,
-            bool _linkedToPlayer, bool _slowsPlayerDown,
-            string _spawnId, string _interactionId, string _modifierId)
-        : base(position)
+        private Image Sprite; private Vector2 prevLiftSpeed, Speed, exactPosition;
+        private Holdable Hold; private Collision onCollideH, onCollideV;
+        private static ParticleType P_Impact { get; } = new ParticleType
         {
-            Depth = _visualDepth;
-            Collider = new Hitbox(8f, 10f, -4f, 2f);
-            Add(holdableSprite = new Image(GFX.Game[_spriteDirectory]));
-            int[] spriteOffset = _spriteOffset.Split(',').Select(x => int.Parse(x)).ToArray();
-            spriteDisplacement = new Vector2(holdableSprite.Width / 2 - spriteOffset[0], holdableSprite.Height / 2 - spriteOffset[1]);
-            holdableSprite.Position -= spriteDisplacement;
-            Add(Hold = new Holdable(.1f));
-            Hold.PickupCollider = new Hitbox(24f, 24f, -12f, -12f);
+            Color = Calc.HexToColor("a69e95"),
+            Size = 1f,
+            FadeMode = ParticleType.FadeModes.Late,
+            DirectionRange = 1.74532926f,
+            SpeedMin = 10f,
+            SpeedMax = 20f,
+            SpeedMultiplier = 0.1f,
+            LifeMin = 0.3f,
+            LifeMax = 0.8f,
+            
+        };
+        
+        public CustomHoldable(EntityData data, Vector2 offset) : base(data.Position + offset)
+        {
+            Position.Y += 12f;
+            /* Initalize all variables first then build the entity */
+            Add(Sprite = new Image(GFX.Game[data.Attr("spriteDirectory")]));
+            spriteOffset = data.Attr("spriteOffset").Split(',').Select(x => int.Parse(x)).ToArray(); visualDepth = data.Attr("visualDepth", "0,0").Split(',').Select(x => int.Parse(x)).ToArray(); linkedToPlayer = data.Bool("linkedToPlayer", false); slowsPlayerDown = data.Bool("slowsPlayerDown", false); spawnsFloating = data.Bool("spawnsFloating", false);
+            Sprite.Position -= new Vector2(Sprite.Width / 2 - spriteOffset[0], Sprite.Height / 2 - spriteOffset[1] + 12f);
+            Depth = visualDepth[0];
+            /* Makes the Collider the "size" of the sprite */
+            Collider = new Hitbox(Sprite.Width, Sprite.Height, (Sprite.Width / 2) * -1f, (Sprite.Height / 2) * -1f - 12f);
+            Add(Hold = new Holdable(.05f));
+            Hold.PickupCollider = new Hitbox(Sprite.Width + 8f, Sprite.Height + 8f, ((Sprite.Width + 8f) / 2) * -1f, ((Sprite.Height + 8f) / 2) * -1f - 12f);
             Hold.SlowFall = false;
-            Hold.SlowRun = _slowsPlayerDown;
+            Hold.SlowRun = data.Bool("slowsPlayerDown", false);
             Hold.OnPickup = new Action(OnPickup);
             Hold.OnRelease = new Action<Vector2>(OnRelease);
             Hold.SpeedGetter = (() => Speed);
             onCollideH = new Collision(OnCollideH);
             onCollideV = new Collision(OnCollideV);
             Add(new MirrorReflection());
-        }
 
-        public override void Added(Scene scene)
-        {
-            base.Added(scene);
         }
-
         public override void Update()
         {
             base.Update();
+            exactPosition = new Vector2(Position.X, Position.Y - 12f);
             if (Hold.IsHeld)
             {
                 prevLiftSpeed = Vector2.Zero;
+                Depth = visualDepth[1];
             } else
             {
                 if (OnGround())
@@ -75,14 +78,14 @@ namespace Celeste.Mod.VectorHelper.Entities
                     {
                         Speed = prevLiftSpeed;
                         prevLiftSpeed = Vector2.Zero;
-                        Speed.Y = Math.Min(Speed.Y * 0.6f, 0f);
-                        if (Speed.X != 0f && Speed.Y == 0f)
+                        Speed.Y = Math.Min(Speed.Y * .6f, 0f);
+                        if (Speed.Y != 0f && Speed.Y == 0f)
                         {
                             Speed.Y = -60f;
                         }
                         if (Speed.Y < 0f)
                         {
-                            noGravityTimer = 0.15f;
+                            noGravityTimer = .15f;
                         }
                     } else
                     {
@@ -117,31 +120,80 @@ namespace Celeste.Mod.VectorHelper.Entities
                 MoveV(Speed.Y * Engine.DeltaTime, OnCollideV);
             }
         }
-        private void OnCollideH(CollisionData data){
+        private void OnCollideH(CollisionData data)
+        {
             if (data.Hit is DashSwitch)
             {
                 (data.Hit as DashSwitch).OnDashCollide(null, Vector2.UnitX * (float)Math.Sign(Speed.X));
             }
+            if (Speed.X > 80f)
+            {
+                ImpactParticles(data.Direction);
+            }
             Speed.X *= -.4f;
         }
-        private void OnCollideV(CollisionData data){
+        private void OnCollideV(CollisionData data)
+        {
             if (data.Hit is DashSwitch)
             {
                 (data.Hit as DashSwitch).OnDashCollide(null, Vector2.UnitY * (float)Math.Sign(Speed.Y));
             }
-            if (Speed.Y > 120f && !(data.Hit is DashSwitch))
+            if (Speed.Y > 100f)
             {
-                Speed.Y *= -.45f;
+                ImpactParticles(data.Direction);
+            }
+            if (Speed.Y > 70f && !(data.Hit is DashSwitch))
+            {
+                Speed.Y *= -.425f;
                 return;
             }
             Speed.Y = 0f;
         }
-        private void OnPickup(){
+        private void ImpactParticles(Vector2 dir)
+        {
+            float direction;
+            Vector2 position;
+            Vector2 positionRange;
+            float sizeX;
+            if (Sprite.Width > 2f) { sizeX = Sprite.Width / 2f; } else { sizeX = Sprite.Width; }
+            float sizeY;
+            if (Sprite.Height > 2f) { sizeY = Sprite.Height / 2f; } else { sizeY = Sprite.Height; }
+            if (dir.X > 0f)
+            {
+                direction = (float)Math.PI;
+                position = new Vector2(Right, Center.Y);
+                positionRange = Vector2.UnitY * sizeY;
+            }
+            else if (dir.X < 0f)
+            {
+                direction = 0f;
+                position = new Vector2(Left, Center.Y);
+                positionRange = Vector2.UnitY * sizeY;
+            }
+            else if (dir.Y > 0f)
+            {
+                direction = -(float)Math.PI / 2f;
+                position = new Vector2(Center.X, Bottom);
+                positionRange = Vector2.UnitX * sizeX;
+            }
+            else
+            {
+                direction = (float)Math.PI / 2f;
+                position = new Vector2(Center.X, Top);
+                positionRange = Vector2.UnitX * sizeX;
+            }
+            (Scene as Level).Particles.Emit(P_Impact, 12, position, positionRange, direction);
+        }
+        private void OnPickup()
+        {
             Speed = Vector2.Zero;
             AddTag(Tags.Persistent);
+            Collidable = false;
         }
-        private void OnRelease(Vector2 force){
+        private void OnRelease(Vector2 force)
+        {
             RemoveTag(Tags.Persistent);
+            Collidable = true;
             if (force.X != 0f && force.Y == 0f)
             {
                 force.Y = -.4f;
@@ -155,22 +207,6 @@ namespace Celeste.Mod.VectorHelper.Entities
         public override bool IsRiding(Solid solid)
         {
             return Speed.Y == 0f && base.IsRiding(solid);
-        }
-
-        public void spawnHoldable()
-        {
-            Player player = Scene.Tracker.GetEntity<Player>();
-            CustomHoldable customHoldable = Scene.Tracker.GetEntity<CustomHoldable>();
-            if (player != null)
-            {
-            }
-            /*
-            Scene.Add(Entity[] = new CustomHoldable(
-                Position + Vector2.UnitY * -20f,
-                spriteDirectory, spriteOffset, visualDepth,
-                linkedToPlayer, slowsPlayerDown,
-                spawnId, interactionId, modifierId
-            )); */
         }
     }
 }
