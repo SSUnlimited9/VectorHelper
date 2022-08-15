@@ -6,13 +6,14 @@ using Celeste.Mod.Entities;
 using Celeste;
 using Microsoft.Xna.Framework;
 using Monocle;
+
 namespace Celeste.Mod.VectorHelper.Triggers
 {
-    [CustomEntity("VectorHelper/CustomHoldableSpawner")]
-    public class HoldableSpawner : Trigger
-    {
-        public HoldableSpawner(EntityData _entityData, Vector2 _offset) : base(_entityData, _offset) {
 
-        }
+    
+    [CustomEntity("VectorHelper/CustomHoldableSpawnerTrigger")]
+    public class CustomHoldableSpawnerTrigger : Trigger
+    {
+        public CustomHoldableSpawnerTrigger(EntityData data, Vector2 offset) : base(data, offset) {}
     }
 }

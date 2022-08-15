@@ -19,39 +19,56 @@ end
 local customHoldable = {}
 
 customHoldable.name = "VectorHelper/BasicCustomHoldable"
-customHoldable.justification = {0.5, 0.5}
+customHoldable.justification = {0.5,0.5}
 customHoldable.fieldOrder = {
     "x", "y", "spriteDirectory", "spriteOffset", "visualDepth", "linkedToPlayer", "slowsPlayerDown", "spawnId", "interactionId"
+}
+customHoldable.ignoredFields = {
+    "_name", "_id"
 }
 customHoldable.placements = {
     {
         name = "Custom Holdable (Basic)",
         data = {
             spriteDirectory = "objects/resortclutter/yellow_14",
-            spriteOffset = "0,0",
+            spriteOffset ="0,0",
             visualDepth = 100,
             linkedToPlayer = false,
             slowsPlayerDown = false,
             spawnId = "",
-            interactionId = ""
+            interactionId = "",
+            width = 8,
+            height = 8
         }
     }
 }
 
 function customHoldable.sprite(room, entity)
-    entity.x, entity.y = (entity.x + (Split(entity.spriteOffset, ",")[1] or 0)) or 0, (entity.y + (Split(entity.spriteOffset, ",")[2] or 0)) or 0
-    entity.spriteDirectory = entity.spriteDirectory or "objects/resortclutter/yellow_14"
     local sprites = {}
+    local x, y = (entity.x - entity.width) or 0, (entity.y - entity.height) or 0
+    local width, height = entity.width * 2, entity.height * 2
 
+    --Main Entity Sprite
+    entity.spriteDirectory = entity.spriteDirectory or "objects/resortclutter/yellow_14"
+
+    
+
+    --Insert Main Sprite
     table.insert(sprites, drawableSprite.fromTexture(entity.spriteDirectory, entity))
 
+
+    --Hitboxes
+
+    --Grab collider
+    table.insert(sprites, drawableRectangle.fromRectangle("fill", x, y, width, height, {1.0, 1.0, 1.0, 1.0}))
+
+    --Return Sprite list
     return sprites
 end
 
 function customHoldable.depth(room, entity)
     return entity.visualDepth
 end
-
 
 
 

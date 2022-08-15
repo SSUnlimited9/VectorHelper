@@ -131,7 +131,7 @@ namespace Celeste.Mod.VectorHelper.Entities
             }
             if (Speed.Y > 120f && !(data.Hit is DashSwitch))
             {
-                Speed.Y = -.45f;
+                Speed.Y *= -.45f;
                 return;
             }
             Speed.Y = 0f;
