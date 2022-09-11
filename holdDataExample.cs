@@ -140,7 +140,7 @@ namespace FactoryHelper.Entities
             else if (!ConveyorMover.IsOnConveyor)
             {
                 if (OnGround())
-                {
+                {  // What does this do?
                     float target = (!OnGround(Position + Vector2.UnitX * 3f)) ? 20f : (OnGround(Position - Vector2.UnitX * 3f) ? 0f : (-20f));
                     Speed.X = Calc.Approach(Speed.X, target, 800f * Engine.DeltaTime);
                     Vector2 liftSpeed = base.LiftSpeed;
