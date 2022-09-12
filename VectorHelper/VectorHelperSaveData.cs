@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Celeste.Mod;
-using VectorHelper.Library;
+using VectorHelper.Utils;
 
 namespace VectorHelper
 {
@@ -23,7 +23,7 @@ namespace VectorHelper
 		/// Assign's a variable (and value) to VectorHelper's Variable Dictionary SaveData)
 		/// Name, Data Type, Type, Value, Array Length (if applicable)
 		/// </summary>
-		public void SetVariable(string VariableName, Lib.DataType DataType = Lib.DataType.String, Lib.VariableType Type = Lib.VariableType.Variable, string Value = "", string ArrayLength = "")
+		public void SetVariable(string VariableName, VHEnums.DataType DataType = VHEnums.DataType.String, VHEnums.VariableType Type = VHEnums.VariableType.Variable, string Value = "", string ArrayLength = "")
 		{
 			object ActualValue = null;
 			try
@@ -31,11 +31,11 @@ namespace VectorHelper
 				switch (DataType)
 				{
 					default:
-					case Lib.DataType.String:
+					case VHEnums.DataType.String:
 						ActualValue = Value;
 						break;
-					case Lib.DataType.Float:
-						ActualValue = VectorHelperConvert.SpecialFloat(Value);
+					case VHEnums.DataType.Float:
+						ActualValue = Converter.SpecialFloat(Value);
 						break;
 				}
 			}
@@ -45,7 +45,7 @@ namespace VectorHelper
 			}
 			switch (Type)
 			{
-				case Lib.VariableType.Variable:
+				case VHEnums.VariableType.Variable:
 					Variables[DataType.ToString()].Add(VariableName, ActualValue);
 					break;
 			}

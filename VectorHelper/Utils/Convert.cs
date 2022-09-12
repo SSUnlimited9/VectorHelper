@@ -1,8 +1,8 @@
 using System;
 
-namespace VectorHelper
+namespace VectorHelper.Utils
 {
-	public class VectorHelperConvert
+	public class Converter
 	{
 		/// <summary>
 		/// Convert a special string to a specific value

@@ -1,9 +1,9 @@
 using System.Reflection;
 using VectorHelper;
 
-namespace VectorHelper.Library
+namespace VectorHelper.Utils
 {
-	public class Lib
+	public class VHEnums
 	{
 		/// <summary>
 		/// List of data types that VectorHelper supports (Mainly for variable storage)

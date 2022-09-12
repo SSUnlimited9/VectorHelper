@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Celeste.Mod;
 
 // Functions that are mostly too long to be used in main code
-namespace VectorHelper.ShortFunctions
+namespace VectorHelper.Utils
 {
-	public class SaveData
+	public class SaveDataUtils
 	{
 		/// <summary>
 		/// Verify the "Variables" Dictionary in SaveData

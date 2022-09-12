@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Celeste;
 using Celeste.Mod;
+using VectorHelper.Utils;
 
 namespace VectorHelper
 {
@@ -31,10 +32,10 @@ namespace VectorHelper
 		private void onChapterEnter(On.Celeste.LevelEnter.orig_Go orig, Session session, bool fromSaveData)
 		{
 			orig(session, fromSaveData);
-			ShortFunctions.SaveData.VerifyVariablesDictionary();
-			ShortFunctions.SaveData.VerifyArraysDictionary();
-			ShortFunctions.SaveData.VerifyListsDictionary();
-			ShortFunctions.SaveData.VerifyDictionariesDictionary();
+			SaveDataUtils.VerifyVariablesDictionary();
+			SaveDataUtils.VerifyArraysDictionary();
+			SaveDataUtils.VerifyListsDictionary();
+			SaveDataUtils.VerifyDictionariesDictionary();
 		}
 	}
 }
