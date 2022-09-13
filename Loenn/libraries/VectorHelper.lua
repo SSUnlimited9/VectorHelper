@@ -19,27 +19,25 @@ local VariableTypes = {
 }
 
 local DataTypes = {
-	"String",
-	"Character",
-	"Byte",
-	"Unsigned Byte",
-	"Short",
-	"Unsigned Short",
-	"Integer",
-	"Unsigned Integer",
-	"Long",
-	"Unsigned Long",
-	"Float",
-	"Double",
-	"Decimal",
-	"Boolean",
-	"Object",
-	"Vector2",
-	"Vector3",
-	"Vector4",
-	"Color",
-	"EntityData",
-	"Dynamic"
+	{ "String", "String" },
+	{ "Character", "Char" },
+	{ "Byte", "SByte" },
+	{ "Unsigned Byte", "Byte" },
+	{ "Integer", "Int" },
+	{ "Unsigned Integer", "UInt" },
+	{ "Long", "Long" },
+	{ "Unsigned Long", "ULong" },
+	{ "Float", "Float" },
+	{ "Double", "Double" },
+	{ "Decimal", "Decimal" },
+	{ "Boolean", "Bool" },
+	{ "Object", "Object" },
+	{ "Vector2", "Vector2" },
+	{ "Vector3", "Vector3" },
+	{ "Vector4", "Vector4" },
+	{ "Color", "Color" },
+	{ "EntityData", "EntityData" },
+	{ "Dynamic", "Dynamic" }
 }
 
 return {

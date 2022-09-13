@@ -340,102 +340,102 @@ namespace VectorHelper.Utils
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("String"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("String", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"String\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"String\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Char"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Char", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Char\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Char\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("SByte"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("SByte", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"SByte\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"SByte\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Byte"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Byte", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Byte\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Byte\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Short"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Short", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Short\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Short\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("UShort"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("UShort", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"UShort\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"UShort\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Int"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Int", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Int\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Int\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("UInt"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("UInt", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"UInt\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"UInt\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Long"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Long", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Long\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Long\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("ULong"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("ULong", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"ULong\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"ULong\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Float"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Float", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Float\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Float\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Double"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Double", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Double\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Double\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Bool"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Bool", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Bool\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Bool\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Object"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Object", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Object\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Object\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Vector2"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Vector2", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Vector2\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Vector2\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Vector3"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Vector3", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Vector3\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Vector3\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Vector4"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Vector4", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Vector4\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Vector4\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Color"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Color", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Color\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Color\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("EntityData"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("EntityData", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"EntityData\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"EntityData\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 			if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey("Dynamic"))
 			{
 				VectorHelperModule.SaveData.Dictionaries.Add("Dynamic", new Dictionary<string, Dictionary<object, object>>());
-				Logger.Log("VectorHelper", $"Dictionary \"Dynamic\" didn't exist in \"Dictionarie\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+				Logger.Log("VectorHelper", $"Dictionary \"Dynamic\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
 			}
 		}
 	}

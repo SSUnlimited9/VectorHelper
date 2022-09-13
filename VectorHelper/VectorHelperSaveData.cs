@@ -23,32 +23,8 @@ namespace VectorHelper
 		/// Assign's a variable (and value) to VectorHelper's Variable Dictionary SaveData)
 		/// Name, Data Type, Type, Value, Array Length (if applicable)
 		/// </summary>
-		public void SetVariable(string VariableName, VHEnums.DataType DataType = VHEnums.DataType.String, VHEnums.VariableType Type = VHEnums.VariableType.Variable, string Value = "", string ArrayLength = "")
+		public void SetVariable(string VariableName, string DataType = "String", string Type = "Variable", string Value = "", string ArrayLength = "")
 		{
-			object ActualValue = null;
-			try
-			{
-				switch (DataType)
-				{
-					default:
-					case VHEnums.DataType.String:
-						ActualValue = Value;
-						break;
-					case VHEnums.DataType.Float:
-						ActualValue = Converter.SpecialFloat(Value);
-						break;
-				}
-			}
-			catch (Exception e)
-			{
-				
-			}
-			switch (Type)
-			{
-				case VHEnums.VariableType.Variable:
-					Variables[DataType.ToString()].Add(VariableName, ActualValue);
-					break;
-			}
 		}
 	}
 }

@@ -2,13 +2,15 @@
 -- Written by SSUnlimited
 
 local drawableSprite = require("structs.drawable_sprite")
+local Selene = require("selene")
 
 local vectorHelper = require("mods").requireFromPlugin("libraries.VectorHelper")
+local consts = require("mods").requireFromPlugin("libraries.Consts")
 
 local variableController = {}
 
 variableController.name = "VectorHelper/VariableController"
-variableController.depth = -10000
+variableController.depth = -15000
 variableController.placements = {
 	{
 		name = "variable_controller",
@@ -22,18 +24,53 @@ variableController.placements = {
 			arrayLength = "1"
 
 		}
+	},
+	{
+		name = "array_controller",
+		data = {
+			type = "Array",
+			dataType = "String",
+			variableName = "myArray",
+			initialValue = "",
+			variableFor = "SaveData",
+			oneTime = "False",
+			arrayLength = "1"
+		}
+	},
+	{
+		name = "list_controller",
+		data = {
+			type = "List",
+			dataType = "String",
+			variableName = "myList",
+			initialValue = "",
+			variableFor = "SaveData",
+			oneTime = "False",
+			arrayLength = "1"
+		}
+	},
+	{
+		name = "dictionary_controller",
+		data = {
+			type = "Dictionary",
+			dataType = "String",
+			variableName = "myDictionary",
+			initialValue = "",
+			variableFor = "SaveData",
+			oneTime = "False",
+			arrayLength = "1"
+		}
 	}
 }
 
 function variableController.ignoredFields(entity)
-	local ignored = {"_id", "_name", "arrayLength"}
+	local res = consts.hideIDName
 
 	if entity.type == "Array" then
-		table.remove(ignored, 3)
-		table.remove(ignored, 2)
+		table.insert(res, "arrayLength")
 	end
 
-	return ignored
+	return res
 end
 
 variableController.fieldOrder = {
@@ -78,7 +115,10 @@ function variableController.sprite(room, entity, viewport)
 	local controller = drawableSprite.fromTexture(vectorHelper.ControllerIcon, entity)
 	table.insert(sprite, controller)
 
-	local typeSprite
+	-- Default sprite for the variable Type incase something goes wrong
+	local typeSprite = drawableSprite.fromTexture("VectorHelper/mapping/unknown", entity)
+	typeSprite:setPosition(x + 4, y + 2)
+
 	if entity.type == "Variable" then
 		typeSprite = drawableSprite.fromTexture("VectorHelper/mapping/variable_icon", entity)
 		typeSprite:setPosition(x + 2, y + 3)
@@ -91,9 +131,6 @@ function variableController.sprite(room, entity, viewport)
 	elseif entity.type == "Dictionary" then
 		typeSprite = drawableSprite.fromTexture("VectorHelper/mapping/dictionary_icon", entity)
 		typeSprite:setPosition(x + 2, y + 4)
-	else
-		typeSprite = drawableSprite.fromTexture("VectorHelper/mapping/unknown", entity)
-		typeSprite:setPosition(x + 4, y + 2)
 	end
 
 	table.insert(sprite, typeSprite)
