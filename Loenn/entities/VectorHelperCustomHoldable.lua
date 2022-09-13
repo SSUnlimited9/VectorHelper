@@ -43,6 +43,10 @@ customHoldable.placements = {
     }
 }
 
+function customHoldable.offset(room, entity)
+    return entity.spriteOffset
+end
+
 function customHoldable.sprite(room, entity)
     local sprites = {}
     local x, y = (entity.x - entity.width) or 0, (entity.y - entity.height) or 0
