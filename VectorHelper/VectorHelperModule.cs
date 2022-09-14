@@ -31,6 +31,10 @@ namespace VectorHelper
 
 		private void onChapterEnter(On.Celeste.LevelEnter.orig_Go orig, Session session, bool fromSaveData)
 		{
+			/*
+				Make sure SaveData has the data types in the dictionaries
+				Everytime the player enters a Map/Chapter/AltSide
+			*/
 			orig(session, fromSaveData);
 			SaveDataUtils.VerifyVariablesDictionary();
 			SaveDataUtils.VerifyArraysDictionary();

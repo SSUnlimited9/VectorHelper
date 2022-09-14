@@ -24,9 +24,14 @@ namespace VectorHelper.Utils
 		/// <summary>
 		/// One time options (expanded from One Time bool)
 		/// </summary>
-		public enum OneTimeModes
+		public enum OnlyOnceModes
 		{
-			False, Session, SaveFile
+			False, Level, Session, SaveFile
+		}
+
+		public enum TriggerModes
+		{
+			OnLevelStart, OnLevelEnd, OnPlayerEnter, OnPlayerLeave, OnUpdate
 		}
 	}
 }
