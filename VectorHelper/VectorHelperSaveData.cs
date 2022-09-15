@@ -21,10 +21,17 @@ namespace VectorHelper
 
 		/// <summary>
 		/// Assign's a variable (and value) to VectorHelper's Variable Dictionary SaveData)
+		/// <paramref name="VariableName"/>
 		/// Name, Data Type, Type, Value, Array Length (if applicable)
 		/// </summary>
 		public void SetVariable(string VariableName, string DataType = "String", string Type = "Variable", string Value = "", string ArrayLength = "")
 		{
+			switch (Type)
+			{
+				case "Variable":
+					Converter.Variables.E();
+					break;
+			}
 		}
 	}
 }

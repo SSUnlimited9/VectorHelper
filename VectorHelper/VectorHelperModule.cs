@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using Celeste;
 using Celeste.Mod;
+using Microsoft.Xna.Framework;
 using VectorHelper.Utils;
+using VectorHelper.Entities.Controllers;
 
 namespace VectorHelper
 {
@@ -20,13 +22,19 @@ namespace VectorHelper
 
 		public override void Load()
 		{
+			Logger.SetLogLevel("VectorHelper/", LogLevel.Info);
 			/* Naming it onChapterEnter for reasons (I looked a the log when testing stuff) */
 			On.Celeste.LevelEnter.Go += onChapterEnter;
+
+			/* Get entities and such to Subscribe to events */
+			VariableController.Load();
 		}
 
 		public override void Unload()
 		{
 			On.Celeste.LevelEnter.Go -= onChapterEnter;
+
+			VariableController.Unload();
 		}
 
 		private void onChapterEnter(On.Celeste.LevelEnter.orig_Go orig, Session session, bool fromSaveData)

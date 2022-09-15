@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Celeste;
 using Celeste.Mod;
-using VectorHelper.Utils;
 
-// Functions that are mostly too long to be used in main code
 namespace VectorHelper.Utils
 {
 	public class SaveDataUtils
@@ -23,7 +22,7 @@ namespace VectorHelper.Utils
 				if (!VectorHelperModule.SaveData.Variables.ContainsKey(type))
 				{
 					VectorHelperModule.SaveData.Variables.Add(type, new Dictionary<string, object>());
-					Logger.Log("VectorHelper/Variables", $"Dictionary \"{type}\" didn't exist in \"Variables\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+					Logger.Log("VectorHelper/Variables", $"Dictionary \"{type}\" didn't exist in \"Variables\" so it was added (SaveFile: {SaveData.Instance.FileSlot}, {SaveData.Instance.Name})");
 				}
 			}
 		}
@@ -43,7 +42,7 @@ namespace VectorHelper.Utils
 				if (!VectorHelperModule.SaveData.Arrays.ContainsKey(type))
 				{
 					VectorHelperModule.SaveData.Arrays.Add(type, new Dictionary<string, object[]>());
-					Logger.Log("VectorHelper/Arrays", $"Dictionary \"{type}\" didn't exist in \"Arrays\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+					Logger.Log("VectorHelper/Variables", $"Dictionary \"{type}\" didn't exist in \"Arrays\" so it was added (SaveFile: {SaveData.Instance.FileSlot}, {SaveData.Instance.Name})");
 				}
 			}
 		}
@@ -63,7 +62,7 @@ namespace VectorHelper.Utils
 				if (!VectorHelperModule.SaveData.Lists.ContainsKey(type))
 				{
 					VectorHelperModule.SaveData.Lists.Add(type, new Dictionary<string, List<object>>());
-					Logger.Log("VectorHelper/Lists", $"Dictionary \"{type}\" didn't exist in \"Lists\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+					Logger.Log("VectorHelper/Variables", $"Dictionary \"{type}\" didn't exist in \"Lists\" so it was added (SaveFile: {SaveData.Instance.FileSlot}, {SaveData.Instance.Name})");
 				}
 			}
 		}
@@ -83,7 +82,7 @@ namespace VectorHelper.Utils
 				if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey(type))
 				{
 					VectorHelperModule.SaveData.Dictionaries.Add(type, new Dictionary<string, Dictionary<object, object>>());
-					Logger.Log("VectorHelper/Dictionaries", $"Dictionary \"{type}\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {Celeste.SaveData.Instance.FileSlot}, {Celeste.SaveData.Instance.Name})");
+					Logger.Log("VectorHelper/Variables", $"Dictionary \"{type}\" didn't exist in \"Dictionaries\" so it was added (SaveFile: {SaveData.Instance.FileSlot}, {SaveData.Instance.Name})");
 				}
 			}
 		}

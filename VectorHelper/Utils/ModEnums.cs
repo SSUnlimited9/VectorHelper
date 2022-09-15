@@ -29,6 +29,11 @@ namespace VectorHelper.Utils
 			False, Level, Session, SaveFile
 		}
 
+		public enum SaveModes
+		{
+			SaveData, Session
+		}
+
 		public enum TriggerModes
 		{
 			OnLevelStart, OnLevelEnd, OnPlayerEnter, OnPlayerLeave, OnUpdate
