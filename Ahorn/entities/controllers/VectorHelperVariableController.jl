@@ -9,7 +9,7 @@ using Ahorn.VectorHelper
 	x::Integer, y::Integer,
 	type::String="Variable", dataType::String="String",
 	variableName::String="myVariable", initialValue::String="",
-	variableFor::String="SaveData", oneTime::String="False",
+	variableFor::String="SaveData", onlyOnce::String="False",
 	setMode::String="OnLevelStart" , arrayLength::String="1"
 )
 
@@ -47,7 +47,7 @@ Ahorn.editingOptions(entity::VariableController) = Dict{String, Any}(
 	"type" => VectorHelper.VariableTypes,
 	"dataType" => VectorHelper.DataTypes,
 	"variableFor" => String["SaveData", "Session"],
-	"oneTime" => VectorHelper.OnlyOnceModes,
+	"onlyOnce" => VectorHelper.OnlyOnceModes,
 	"setMode" => String[ "OnLevelStart", "OnLevelEnd", "OnUpdate" ]
 )
 
@@ -55,7 +55,7 @@ Ahorn.editingOrder(entity::VariableController) = String[
 	"x", "y",
 	"type", "dataType",
 	"variableName", "initialValue",
-	"variableFor", "oneTime",
+	"variableFor", "onlyOnce",
 	"setMode", "arrayLength"
 ]
 
