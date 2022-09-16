@@ -12,19 +12,24 @@ namespace VectorHelper.Entities.Controllers
 	[CustomEntity("VectorHelper/VariableController")]
 	public class VariableController : Entity
 	{
-		private string type, dataType, variableName, value, variableFor, onlyOnce, setMode, arrayLength;
+		private VHEnums.VariableType type;
+		private VHEnums.DataType dataType;
+		private VHEnums.SaveModes variableFor;
+		private VHEnums.OnlyOnceModes onlyOnce;
+		private VHEnums.TriggerModes setMode;
+		private string variableName, value, arrayLength;
 		private string roomName;
 		private EntityID entityID;
 
 		public VariableController(EntityData data, Vector2 offset, EntityID id) : base(data.Position + offset)
 		{
-			type = data.Enum("type", VHEnums.VariableType.Variable).ToString();
-			dataType = data.Enum("dataType", VHEnums.DataType.String).ToString();
+			type = data.Enum("type", VHEnums.VariableType.Variable);
+			dataType = data.Enum("dataType", VHEnums.DataType.String);
 			variableName = data.Attr("variableName", "myVariable");
 			value = data.Attr("value", "");
-			variableFor = data.Enum("variableFor", VHEnums.SaveModes.SaveData).ToString();
-			onlyOnce = data.Enum("onlyOnce", VHEnums.OnlyOnceModes.False).ToString();
-			setMode = data.Enum("setMode", VHEnums.TriggerModes.OnLevelStart).ToString();
+			variableFor = data.Enum("variableFor", VHEnums.SaveModes.SaveData);
+			onlyOnce = data.Enum("onlyOnce", VHEnums.OnlyOnceModes.False);
+			setMode = data.Enum("setMode", VHEnums.TriggerModes.OnLevelStart);
 			arrayLength = data.Attr("arrayLength", "1");
 		}
 
@@ -45,6 +50,7 @@ namespace VectorHelper.Entities.Controllers
 
 		public static void Load()
 		{
+			// Subscribe to the room/scene/level change event
 			On.Celeste.Level.TransitionTo += onRoomChange;
 		}
 

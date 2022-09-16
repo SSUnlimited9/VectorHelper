@@ -23,15 +23,16 @@ namespace VectorHelper
 		public override void Load()
 		{
 			Logger.SetLogLevel("VectorHelper/", LogLevel.Info);
-			/* Naming it onChapterEnter for reasons (I looked a the log when testing stuff) */
+			// Make sure that VectorHelper's SaveData contains DataTypes in the dictionaries everytime the player loads a chapter
 			On.Celeste.LevelEnter.Go += onChapterEnter;
 
-			/* Get entities and such to Subscribe to events */
+			// Call Entity, Trigger and such's Load methods (Most of them so they can subscribe to events they need)
 			VariableController.Load();
 		}
 
 		public override void Unload()
 		{
+			// Unsubscribe from events since thats in basically every mod
 			On.Celeste.LevelEnter.Go -= onChapterEnter;
 
 			VariableController.Unload();
@@ -39,10 +40,7 @@ namespace VectorHelper
 
 		private void onChapterEnter(On.Celeste.LevelEnter.orig_Go orig, Session session, bool fromSaveData)
 		{
-			/*
-				Make sure SaveData has the data types in the dictionaries
-				Everytime the player enters a Map/Chapter/AltSide
-			*/
+			// Make sure DataTypes are in the dictionaries
 			orig(session, fromSaveData);
 			SaveDataUtils.VerifyVariablesDictionary();
 			SaveDataUtils.VerifyArraysDictionary();

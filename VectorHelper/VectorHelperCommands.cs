@@ -5,6 +5,7 @@ namespace VectorHelper
 {
 	public class VectorHelperCommands
 	{
+		// Simple command to test and maybe use the SetVariable function
 		[Command("set_variable", "Set variable help text")]
 		public static void SetVariable()
 		{

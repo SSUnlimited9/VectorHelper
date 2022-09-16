@@ -71,6 +71,7 @@ function Ahorn.renderAbs(ctx::Ahorn.Cairo.CairoContext, entity::VariableControll
 	offsetX = 4
 	offsetY = 2
 
+    # Change the sprite and offset/position based on the type
 	if entity.type == "Variable"
 		sprite = "VectorHelper/mapping/variable_icon"
 		offsetX = 3
@@ -100,6 +101,7 @@ end
 function Ahorn.editingIgnored(entity::VariableController, multiple::Bool=false)
 	hide = String[]
 
+    # Hide "arrayLength" if the type is not "Array" so users dont edit it for no reason
 	if entity.type != "Array"
 		push!(hide, "arrayLength")
 	end	
