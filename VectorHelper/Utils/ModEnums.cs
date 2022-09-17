@@ -10,7 +10,7 @@ namespace VectorHelper.Utils
 		/// </summary>
 		public enum DataType
 		{
-			String, Char, SByte, Byte, Short, UShort, Int, UInt, Long, ULong, Float, Double, Decimal, Bool, Object, Vector2, Vector3, Vector4, Color, EntityData, Dynamic
+			String, Char, SByte, Byte, Short, UShort, Int, UInt, Long, ULong, Float, Double, Decimal, Bool, Object, Vector2, Vector3, Vector4, Color, EntityData, Dynamic, Any
 		}
 
 		/// <summary>
