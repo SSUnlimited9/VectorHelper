@@ -12,6 +12,9 @@ namespace VectorHelper
 	{
 		public static VectorHelperModule Instance;
 
+		public override Type SettingsType => typeof(VectorHelperSettings);
+		public static VectorHelperSettings Settings => (VectorHelperSettings) Instance._Settings;
+
 		public override Type SaveDataType => typeof(VectorHelperSaveData);
 		public static VectorHelperSaveData SaveData => (VectorHelperSaveData) Instance._SaveData;
 
@@ -29,7 +32,7 @@ namespace VectorHelper
 			On.Celeste.LevelEnter.Go += onChapterEnter;
 
 			// Call Entity, Trigger and such's Load methods (Most of them so they can subscribe to events they need)
-			VariableController.Load();
+			//VariableController.Load();
 		}
 
 		public override void Unload()
@@ -37,7 +40,7 @@ namespace VectorHelper
 			// Unsubscribe from events (since thats in basically every mod)
 			On.Celeste.LevelEnter.Go -= onChapterEnter;
 
-			VariableController.Unload();
+			//VariableController.Unload();
 		}
 
 		private void onChapterEnter(On.Celeste.LevelEnter.orig_Go orig, Session session, bool fromSaveData)
