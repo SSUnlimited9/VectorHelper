@@ -10,8 +10,6 @@ namespace VectorHelper
 		public Dictionary<string, Dictionary<string, object>> Variables { get; set; } = new Dictionary<string, Dictionary<string, object>>();
 		public Dictionary<string, Dictionary<string, object[]>> Arrays { get; set; } = new Dictionary<string, Dictionary<string, object[]>>();
 		public Dictionary<string, Dictionary<string, List<object>>> Lists { get; set; } = new Dictionary<string, Dictionary<string, List<object>>>();
-		public Dictionary<string, Dictionary<string, Dictionary<string, object>>> Dictionaries { get; set; } = new Dictionary<string, Dictionary<string, Dictionary<string, object>>>();
-
-		
+		public Dictionary<string, Dictionary<string, Dictionary<object, object>>> Dictionaries { get; set; } = new Dictionary<string, Dictionary<string, Dictionary<object, object>>>();		
 	}
 }

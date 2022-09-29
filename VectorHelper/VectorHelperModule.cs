@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
 using Celeste;
 using Celeste.Mod;
-using Microsoft.Xna.Framework;
 using VectorHelper.Utils;
-using VectorHelper.Entities.Controllers;
 
 namespace VectorHelper
 {
@@ -47,7 +44,7 @@ namespace VectorHelper
 		{
 			// Make sure DataTypes are in the dictionaries
 			orig(session, fromSaveData);
-			SaveDataUtils.VerifyVariablesDictionary();
+			Utils.VerifyVariablesDictionary();
 		}
 	}
 }
