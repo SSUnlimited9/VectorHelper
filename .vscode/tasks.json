@@ -4,7 +4,7 @@
 		{
 			"label": "Build",
 			"type": "shell",
-			"command": "dotnet build VectorHelper/VectorHelper.csproj",
+			"command": "dotnet build",
 			"group": "build"
 		}
 	]
