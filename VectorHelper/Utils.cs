@@ -9,19 +9,13 @@ namespace VectorHelper.Utils
 				switch (dt)
 				{
 					case Variable.DataType.Char:
+						char @char = ' ';
 						try
 						{
-							return char.Parse(value.ToString());
-						} catch
-						{
-							try
-							{
-								return char.Parse(value.ToString().Substring(0, 1));
-							} catch // This shouldnt happen, but just in case.
-							{
-								return (char)' ';
-							}
-						}
+							@char = char.Parse(value.ToString());
+						} catch 
+						{ try { @char = char.Parse(value.ToString().Substring(0, 1)); } catch { } }
+						return @char;
 					case Variable.DataType.EntityData:
 						// Return nothing since EntityData is handled differently.
 						return null;

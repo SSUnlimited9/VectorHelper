@@ -15,10 +15,6 @@ namespace VectorHelper.Entities
 	[CustomEntity("VectorHelper/CustomExtendedCassetteBlock")]
 	public class CustomExtendedCassetteBlock : ExtendedCassetteBlock
 	{
-		public DynamicData cassetteData;
-		public EntityData data;
-		public EntityID id;
-
 		public CustomExtendedCassetteBlock(EntityData data, Vector2 offset, EntityID id) : this(data.Position + offset, id, data.Width, data.Height, data.Int("index", 0), data.Float("tempo", 1f), data.Attr("color"), data.Attr("activeSprite"), data.Attr("inactiveSprite"), data.Int("surfaceSoundIndex"))
 		{
 			this.data = data;
@@ -52,7 +48,7 @@ namespace VectorHelper.Entities
 
 		private static void CassetteBlock_SetImage(On.Celeste.CassetteBlock.orig_SetImage orig, CassetteBlock self, float x, float y, int tx, int ty)
 		{
-			DynamicData data = new DynamicData(self);
+			/*DynamicData data = new DynamicData(self);
 			
 			if (data.Get("activeSprite") == null && data.Get("inactiveSprite") == null) orig(self, x, y, tx, ty);
 			else if (self is CustomExtendedCassetteBlock)
@@ -61,7 +57,8 @@ namespace VectorHelper.Entities
 				string inactiveSprite = data.Get<string>("inactiveSprite");
 				data.Get<List<Image>>("pressed").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[inactiveSprite]));
 				data.Get<List<Image>>("solid").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[activeSprite]));
-			}
+			}*/
+			orig(self, x, y, tx, ty);
 		}
 	}
 }

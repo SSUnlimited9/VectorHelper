@@ -19,7 +19,6 @@ namespace VectorHelper.Entities
 		public EntityData data;
 		public EntityID id;
 		private static bool cassetteBlockAdded = false;
-		private CassetteBlock hiddenCBlock;
 		public ExtendedCassetteBlock(EntityData data, Vector2 offset, EntityID id) : this(data.Position + offset, id, data.Width, data.Height, data.Int("index", 0), data.Float("tempo", 1f))
 		{
 			this.data = data;
@@ -55,31 +54,6 @@ namespace VectorHelper.Entities
 
 			cassetteData.Set("color", color);
 			cassetteData.Add("isExtended", true);
-			/*if (!cassetteBlockAdded)
-			{
-				cassetteBlockAdded = true;
-				EntityData entityData = new EntityData();
-				entityData.Position = this.Position + new Vector2(2f, 2f);
-				entityData.Width = 4;
-				entityData.Height = 4;
-				entityData.Values.Add("index", index);
-				entityData.Values.Add("tempo", tempo);
-				EntityID entityID = new EntityID(SceneAs<Level>().Session.Level, Calc.Random.Next());
-				hiddenCBlock = new CassetteBlock(entityData, Vector2.Zero, entityID);
-				hiddenCBlock.Visible = false;
-				hiddenCBlock.Depth = 1000000;
-				Scene.Add(hiddenCBlock);
-			}*/
-		}
-
-		public override void Added(Scene scene)
-		{
-			base.Added(scene);
-			if (scene.Tracker.GetEntity<CassetteBlockManager>() == null && scene.Tracker.GetEntities<CassetteBlock>() == null)
-			{
-				SceneAs<Level>().HasCassetteBlocks = true;
-				scene.Add(new CassetteBlockManager());
-			}
 		}
 
 		public static void Load()
@@ -131,6 +105,15 @@ namespace VectorHelper.Entities
 				data.Get<List<Image>>("solid").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game["objects/cassetteblock/solid"]));
 				return;
 			}
+			if (self is CustomExtendedCassetteBlock)
+			{
+				if (data.Get("activeSprite") != null && data.Get("inactiveSprite") != null)
+				{
+					data.Get<List<Image>>("pressed").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[data.Get<string>("activeSprite")]));
+					data.Get<List<Image>>("solid").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[data.Get<string>("inactiveSprite")]));
+					return;
+				}
+			}
 			orig(self, x, y, tx, ty);
 		}
 
@@ -156,15 +139,16 @@ namespace VectorHelper.Entities
 			TransitionListener listener = new TransitionListener();
 			listener.OnOutBegin = delegate()
 			{
-				if (!self.SceneAs<Level>().HasCassetteBlocks)
+				if (!self.SceneAs<Level>().HasCassetteBlocks || self.Scene.Tracker.GetEntity<ExtendedCassetteBlock>() == null)
 				{
 					self.RemoveSelf();
 					return;
 				}
-				//cbmData.Set("maxBeat", self.SceneAs<Level>().CassetteBlockBeats);
-				//cbmData.Set("tempoMult", self.SceneAs<Level>().CassetteBlockTempo);
+				cbmData.Set("maxBeat", self.SceneAs<Level>().CassetteBlockBeats);
+				cbmData.Set("tempoMult", self.SceneAs<Level>().CassetteBlockTempo);
 			};
-			orig(self);
+			self.Add(listener);
+			// orig(self);
 		}
 
 		private static bool OnLoadEntity(Level level, LevelData levelData, Vector2 offset, EntityData entityData)

@@ -11,6 +11,8 @@ namespace VectorHelper.Module
 		public Dictionary<object, Dictionary<string, List<object>>> Lists = new Dictionary<object, Dictionary<string, List<object>>>();
 		public Dictionary<object, Dictionary<string, Dictionary<object, object>>> Dictionaries = new Dictionary<object, Dictionary<string, Dictionary<object, object>>>();
 
+		public Dictionary<string, VariableProperties> VariableProperties = new Dictionary<string, VariableProperties>();
+
 		public void SetVariable(string VariableName, object Value = null, Variable.DataType DataType = Variable.DataType.String, Variable.Type Type = Variable.Type.Variable)
 		{
 			if (DataType == Variable.DataType.Any) DataType = Variable.DataType.String;
