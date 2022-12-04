@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using Celeste;
 using Celeste.Mod;
 using Celeste.Mod.Entities;
 using Microsoft.Xna.Framework;
 using Monocle;
+using MonoMod.RuntimeDetour;
 using MonoMod.Utils;
 
 namespace VectorHelper.Entities
@@ -56,19 +56,17 @@ namespace VectorHelper.Entities
 			cassetteData.Add("isExtended", true);
 		}
 
+		private static IDetour hook_Level_orig_LoadLevel;
 		public static void Load()
 		{
 			On.Celeste.CassetteBlock.SetImage += CassetteBlock_SetImage;
 			On.Celeste.CassetteBlock.ShiftSize += CassetteBlock_ShiftSize;
-			On.Celeste.CassetteBlockManager.ctor += CassetteBlockManager_ctor;
 			Everest.Events.Level.OnLoadEntity += OnLoadEntity;
 		}
-
 		public static void Unload()
 		{
 			On.Celeste.CassetteBlock.SetImage -= CassetteBlock_SetImage;
 			On.Celeste.CassetteBlock.ShiftSize -= CassetteBlock_ShiftSize;
-			On.Celeste.CassetteBlockManager.ctor -= CassetteBlockManager_ctor;
 			Everest.Events.Level.OnLoadEntity -= OnLoadEntity;
 		}
 
@@ -76,44 +74,30 @@ namespace VectorHelper.Entities
 		{
 			DynamicData data = new DynamicData(self);
 
-			if (self is ExtendedCassetteBlock)
+			string activeSprite = "";
+			string inactiveSprite = "";
+			if (self is ExtendedCassetteBlock && self is not CustomExtendedCassetteBlock)
 			{
-				string sprite = "VectorHelper/cassetteBlock/";
-				List<MTexture> list = GFX.Game.GetAtlasSubtextures("objects/cassetteblock/pressed");
-				// Have to do this because the way "GFX.Game.GetAtlasSubtextures" works
-				// I dont think it can handle textures that go from 09 to 10
-				// So until that is some how fixed/changed, this is the best way to do it
-				for (int i = 4; i < 15; i++)
-				{
-					if (i < 10)
-					{
-						list.Add(GFX.Game[sprite + "extended0" + i]);
-					}
-					else if (i < 15)
-					{
-						list.Add(GFX.Game[sprite + "extended" + i]);
-					}
-					else
-					{
-						list.Add(GFX.Game[sprite + "empty"]);
-					}
-				}
-
-				int index = data.Get<int>("Index") % list.Count;
-
-				data.Get<List<Image>>("pressed").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, list[index]));
-				data.Get<List<Image>>("solid").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game["objects/cassetteblock/solid"]));
-				return;
+				ExtendedCassetteBlock block = (ExtendedCassetteBlock)self;
+				int i = block.Index % 15;
+				activeSprite = "objects/cassetteblock/solid";
+				inactiveSprite =  i < 4 ? "objects/cassetteblock/pressed0" + i : i < 10 ? "VectorHelper/cassetteBlock/extended0" + i :
+				i < 15 ? "VectorHelper/cassetteBlock/extended" + i : "VectorHelper/cassetteBlock/empty";
 			}
+
 			if (self is CustomExtendedCassetteBlock)
 			{
-				if (data.Get("activeSprite") != null && data.Get("inactiveSprite") != null)
-				{
-					data.Get<List<Image>>("pressed").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[data.Get<string>("activeSprite")]));
-					data.Get<List<Image>>("solid").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[data.Get<string>("inactiveSprite")]));
-					return;
-				}
+				activeSprite = data.Get<string>("activeSprite");
+				inactiveSprite = data.Get<string>("inactiveSprite");
 			}
+
+			if (activeSprite != "" && inactiveSprite != "")
+			{
+				data.Get<List<Image>>("pressed").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[inactiveSprite]));
+				data.Get<List<Image>>("solid").Add(data.Invoke<Image>("CreateImage", x, y, tx, ty, GFX.Game[activeSprite]));
+				return;
+			}
+
 			orig(self, x, y, tx, ty);
 		}
 
@@ -122,6 +106,8 @@ namespace VectorHelper.Entities
 			DynamicData data = DynamicData.For(self);
 			foreach (CassetteBlock block in data.Get<List<CassetteBlock>>("group"))
 			{
+				if (!VectorHelper.Module.VectorHelperModule.Settings.CassetteRiseFix) break;
+
 				// Makes any cassetteblock and those extending cassetteblock shift down (properly) if the player is inside it
 				// Communal Helper Custom Cassette Blocks also do this but with a bit extra stuff
 				if (block.Activated && block.CollideCheck<Player>())
@@ -130,25 +116,6 @@ namespace VectorHelper.Entities
 				}
 			}
 			orig(self, amount);
-		}
-
-		private static void CassetteBlockManager_ctor(On.Celeste.CassetteBlockManager.orig_ctor orig, CassetteBlockManager self)
-		{
-			self.Tag = Tags.Global;
-			DynamicData cbmData = new DynamicData(self);
-			TransitionListener listener = new TransitionListener();
-			listener.OnOutBegin = delegate()
-			{
-				if (!self.SceneAs<Level>().HasCassetteBlocks || self.Scene.Tracker.GetEntity<ExtendedCassetteBlock>() == null)
-				{
-					self.RemoveSelf();
-					return;
-				}
-				cbmData.Set("maxBeat", self.SceneAs<Level>().CassetteBlockBeats);
-				cbmData.Set("tempoMult", self.SceneAs<Level>().CassetteBlockTempo);
-			};
-			self.Add(listener);
-			// orig(self);
 		}
 
 		private static bool OnLoadEntity(Level level, LevelData levelData, Vector2 offset, EntityData entityData)
