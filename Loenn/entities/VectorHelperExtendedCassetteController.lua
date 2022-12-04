@@ -8,10 +8,19 @@ extendedCassetteController.name = "VectorHelper/ExtendedCassetteController"
 
 extendedCassetteController.placements = {
 	{
-		name = "extended_cassette_controller",
+		name = "default",
 		data = {
 			customOrder = "",
 			overrideMode = 0,
+			startIndex = 0,
+			skipEmptyIndexes = false
+		}
+	},
+	{
+		name = "customOrder",
+		data = {
+			customOrder = "1,2,3",
+			overrideMode = 1,
 			startIndex = 0,
 			skipEmptyIndexes = false
 		}
@@ -33,6 +42,11 @@ function extendedCassetteController.ignoredFields(entity)
 	return ignoredFields
 end
 
+extendedCassetteController.fieldOrder = {
+	"x", "y",
+	"overrideMode", "startIndex"
+}
+
 extendedCassetteController.fieldInformation = {
 	overrideMode = {
 		fieldType = "integer",
@@ -46,6 +60,9 @@ extendedCassetteController.fieldInformation = {
 
 function extendedCassetteController.sprite(room, entity, viewport)
 	local sprite = {}
+
+	local bg = drawableSprite.fromTexture(vectorHelper.controllerBgDark, entity)
+	table.insert(sprite, bg)
 
 	local design = drawableSprite.fromTexture("VectorHelper/extended_cassette_controller", entity)
 	table.insert(sprite, design)

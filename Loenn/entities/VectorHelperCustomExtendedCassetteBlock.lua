@@ -91,7 +91,7 @@ customExtendedCassetteBlock.fieldInformation = {
 }
 
 function customExtendedCassetteBlock.sprite(room, entity)
-	local relevantBlocks = utils.filter(vectorHelper.getSearchPredicateCassette(entity), room.entities)
+	local relevantBlocks = utils.filter(vectorHelper.getSearchPredicate(entity), room.entities)
 
 	connectedEntities.appendIfMissing(relevantBlocks, entity)
 

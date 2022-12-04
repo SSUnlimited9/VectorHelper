@@ -2,7 +2,13 @@ mods.VectorHelper.name=Vector Helper
 
 # Entities
 
-
 # Controllers
+entities.VectorHelper/ExtendedCassetteController.placements.name.default=Extended Cassette Controller
+entities.VectorHelper/ExtendedCassetteController.placements.description.default=Controller used for overriding some of the cassette block behaviors.
+entities.VectorHelper/ExtendedCassetteController.placements.name.customOrder=Extended Cassette Controller (Custom Order)
+entities.VectorHelper/ExtendedCassetteController.placements.description.customOrder=Controller used for overriding some of the cassette block behaviors.\nWith a custom index order.
+entities.VectorHelper/ExtendedCassetteController.attributes.description.startIndex=The index of the Cassette Block that should activate first.
+entities.VectorHelper/ExtendedCassetteController.attributes.description.skipEmptyIndexes=Whether the controller should skip an index if there are no Cassette Blocks that have that index.
+entities.VectorHelper/ExtendedCassetteController.attributes.description.customOrder=The order of indexs that the controller should activate.\n"Start Index" is added to the beginning of this in game.
 
 # Triggers
