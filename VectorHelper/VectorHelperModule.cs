@@ -14,6 +14,9 @@ namespace VectorHelper.Module
 		public override Type SaveDataType => typeof(VectorHelperSaveData);
 		public static VectorHelperSaveData SaveData => (VectorHelperSaveData) Instance._SaveData;
 
+		public override Type SettingsType => typeof(VectorHelperSettings);
+		public static VectorHelperSettings Settings => (VectorHelperSettings) Instance._Settings;
+
 		public VectorHelperModule()
 		{
 			Instance = this;
@@ -24,14 +27,12 @@ namespace VectorHelper.Module
 			Logger.SetLogLevel("VectorHelper", LogLevel.Verbose);
 			typeof(VectorHelperExports).ModInterop();
 			On.Celeste.LevelEnter.Go += LevelEnter_Go;
-			CustomExtendedCassetteBlock.Load();
 			ExtendedCassetteBlock.Load();
 		}
 
 		public override void Unload()
 		{
 			On.Celeste.LevelEnter.Go -= LevelEnter_Go;
-			CustomExtendedCassetteBlock.Unload();
 			ExtendedCassetteBlock.Unload();
 		}
 
