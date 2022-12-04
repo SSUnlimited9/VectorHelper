@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build VectorHelper/VectorHelper.csproj --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
