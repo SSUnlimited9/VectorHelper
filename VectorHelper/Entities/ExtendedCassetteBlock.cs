@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Monocle;
 using MonoMod.RuntimeDetour;
 using MonoMod.Utils;
+using VectorHelper.Module;
 
 namespace VectorHelper.Entities
 {
@@ -16,13 +17,8 @@ namespace VectorHelper.Entities
 	public class ExtendedCassetteBlock : CassetteBlock
 	{
 		public DynamicData cassetteData;
-		public EntityData data;
-		public EntityID id;
-		private static bool cassetteBlockAdded = false;
 		public ExtendedCassetteBlock(EntityData data, Vector2 offset, EntityID id) : this(data.Position + offset, id, data.Width, data.Height, data.Int("index", 0), data.Float("tempo", 1f))
 		{
-			this.data = data;
-			this.id = id;
 		}
 		public ExtendedCassetteBlock(Vector2 position, EntityID id, int width, int height, int index, float tempo) : base(position, id, width, height, index, tempo)
 		{
@@ -53,10 +49,8 @@ namespace VectorHelper.Entities
 			}
 
 			cassetteData.Set("color", color);
-			cassetteData.Add("isExtended", true);
 		}
 
-		private static IDetour hook_Level_orig_LoadLevel;
 		public static void Load()
 		{
 			On.Celeste.CassetteBlock.SetImage += CassetteBlock_SetImage;
@@ -79,7 +73,7 @@ namespace VectorHelper.Entities
 			if (self is ExtendedCassetteBlock && self is not CustomExtendedCassetteBlock)
 			{
 				ExtendedCassetteBlock block = (ExtendedCassetteBlock)self;
-				int i = block.Index % 15;
+				int i = block.Index % 16;
 				activeSprite = "objects/cassetteblock/solid";
 				inactiveSprite =  i < 4 ? "objects/cassetteblock/pressed0" + i : i < 10 ? "VectorHelper/cassetteBlock/extended0" + i :
 				i < 15 ? "VectorHelper/cassetteBlock/extended" + i : "VectorHelper/cassetteBlock/empty";
@@ -87,8 +81,9 @@ namespace VectorHelper.Entities
 
 			if (self is CustomExtendedCassetteBlock)
 			{
-				activeSprite = data.Get<string>("activeSprite");
-				inactiveSprite = data.Get<string>("inactiveSprite");
+				CustomExtendedCassetteBlock block = (CustomExtendedCassetteBlock)self;
+				activeSprite = block.activeSprite;
+				inactiveSprite = block.inactiveSprite;
 			}
 
 			if (activeSprite != "" && inactiveSprite != "")
@@ -104,10 +99,15 @@ namespace VectorHelper.Entities
 		private static void CassetteBlock_ShiftSize(On.Celeste.CassetteBlock.orig_ShiftSize orig, CassetteBlock self, int amount)
 		{
 			DynamicData data = DynamicData.For(self);
+
+			if (!VectorHelperModule.Settings.CassetteRiseFix)
+			{
+				orig(self, amount);
+				return;
+			}
+
 			foreach (CassetteBlock block in data.Get<List<CassetteBlock>>("group"))
 			{
-				if (!VectorHelper.Module.VectorHelperModule.Settings.CassetteRiseFix) break;
-
 				// Makes any cassetteblock and those extending cassetteblock shift down (properly) if the player is inside it
 				// Communal Helper Custom Cassette Blocks also do this but with a bit extra stuff
 				if (block.Activated && block.CollideCheck<Player>())
@@ -115,6 +115,7 @@ namespace VectorHelper.Entities
 					amount *= -1;
 				}
 			}
+
 			orig(self, amount);
 		}
 

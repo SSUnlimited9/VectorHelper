@@ -28,12 +28,14 @@ namespace VectorHelper.Module
 			typeof(VectorHelperExports).ModInterop();
 			On.Celeste.LevelEnter.Go += LevelEnter_Go;
 			ExtendedCassetteBlock.Load();
+			CustomExtendedCassetteBlock.Load();
 		}
 
 		public override void Unload()
 		{
 			On.Celeste.LevelEnter.Go -= LevelEnter_Go;
 			ExtendedCassetteBlock.Unload();
+			CustomExtendedCassetteBlock.Unload();
 		}
 
 		private void LevelEnter_Go(On.Celeste.LevelEnter.orig_Go orig, Session session, bool fromSaveData)

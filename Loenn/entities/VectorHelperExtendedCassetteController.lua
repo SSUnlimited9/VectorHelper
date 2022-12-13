@@ -13,16 +13,28 @@ extendedCassetteController.placements = {
 			customOrder = "",
 			overrideMode = 0,
 			startIndex = 0,
-			skipEmptyIndexes = false
+			skipEmptyIndexes = false,
+			tempoModifier = ""
 		}
 	},
 	{
 		name = "customOrder",
 		data = {
-			customOrder = "1,2,3",
+			customOrder = "0,1,2,3",
 			overrideMode = 1,
 			startIndex = 0,
-			skipEmptyIndexes = false
+			skipEmptyIndexes = false,
+			tempoModifier = ""
+		}
+	},
+	{
+		name = "multiTempo",
+		data = {
+			customOrder = "",
+			overrideMode = 0,
+			startIndex = 0,
+			skipEmptyIndexes = false,
+			tempoModifier = "1.0,1.35,1.85"
 		}
 	}
 }
