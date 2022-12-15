@@ -8,6 +8,13 @@ namespace VectorHelper.Module
 {
 	public class VectorHelperCommands
 	{
+		[Command("set_variable", "set a var in dictionary")]
+		public static void CMDSETVARIABLE(string Name)
+		{
+			VectorHelperModule.SaveData.SetVariable(Name);
+		}	
+
+
 		[Command("count_entities", "get the total number of entities in the level")]
 		public static void CMDCOUNTENTITIES()
 		{

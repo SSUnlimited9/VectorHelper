@@ -2,7 +2,7 @@ using MonoMod.ModInterop;
 
 namespace VectorHelper.API
 {
-	[ModExportName("VectorHelper")]
+	[ModExportName("VectorHelper.Utils")]
 	public static class VectorHelperExports
 	{
 		// TODO add some random things?
