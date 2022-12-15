@@ -5,7 +5,11 @@
 			"label": "Build",
 			"type": "shell",
 			"command": "dotnet build",
-			"group": "build"
+			"group":
+			{
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }
