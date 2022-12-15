@@ -2,6 +2,7 @@
 using Celeste;
 using Celeste.Mod;
 using MonoMod.ModInterop;
+using Microsoft.Xna.Framework;
 using VectorHelper.API;
 using VectorHelper.Entities;
 
@@ -26,6 +27,7 @@ namespace VectorHelper.Module
 		{
 			Logger.SetLogLevel("VectorHelper", LogLevel.Verbose);
 			typeof(VectorHelperExports).ModInterop();
+			On.Celeste.Player.ctor += Player_ctor;
 			On.Celeste.LevelEnter.Go += LevelEnter_Go;
 			ExtendedCassetteBlock.Load();
 			CustomExtendedCassetteBlock.Load();
@@ -33,15 +35,24 @@ namespace VectorHelper.Module
 
 		public override void Unload()
 		{
+			On.Celeste.Player.ctor -= Player_ctor;
 			On.Celeste.LevelEnter.Go -= LevelEnter_Go;
 			ExtendedCassetteBlock.Unload();
 			CustomExtendedCassetteBlock.Unload();
+		}
+
+		private void Player_ctor(On.Celeste.Player.orig_ctor orig, Player self, Vector2 position, PlayerSpriteMode spriteMode)
+		{
+			orig(self, position, spriteMode);
+			// Verify the Extended Flag Dictionaries
+			VectorHelper.Utils.VUtils.VerifyExFlagDictionaries();
 		}
 
 		private void LevelEnter_Go(On.Celeste.LevelEnter.orig_Go orig, Session session, bool fromSaveData)
 		{
 			orig(session, fromSaveData);
 			// Verify the Extended Flag Dictionaries
+			// VectorHelper.Utils.VUtils.VerifyExFlagDictionaries();
 		}
 	}
 }

@@ -26,7 +26,7 @@ namespace VectorHelper.Module
 					{
 						hadKey = true;
 						Variables[DataType][VariableName] = value;
-						Logger.Log(LogLevel.Info, "VectorHelper/Variables", "Reset \"{DataType.ToString()}\"");
+						Logger.Log(LogLevel.Info, "VectorHelper/Variables", $"Reset \"{DataType.ToString()}\"");
 					} else
 					{
 						Variables[DataType].Add(VariableName, value);

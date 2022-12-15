@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
+using Celeste.Mod;
 using Microsoft.Xna.Framework;
+using VectorHelper.Module;
 
 namespace VectorHelper.Utils
 {
@@ -26,6 +29,44 @@ namespace VectorHelper.Utils
 						// This applies to String, Object and Dynamic (and Any)
 						return value;
 				}
+			}
+		}
+
+		public static void VerifyExFlagDictionaries()
+		{
+			List<string> types = new List<string>(Enum.GetNames(typeof(Variable.DataType)));
+			types.Remove("Any");
+
+			foreach (string type in types)
+			{
+				if (!VectorHelperModule.SaveData.Variables.ContainsKey(type))
+				{
+					Logger.Log(LogLevel.Debug, "VectorHelper/ExFlags", $"SaveData Dictionary \"{type}\" doesn't exist in \"Variables\", Creating it...");
+					VectorHelperModule.SaveData.Variables.Add(type, new Dictionary<string, object>());
+				}
+
+				if (!VectorHelperModule.SaveData.Arrays.ContainsKey(type))
+				{
+					Logger.Log(LogLevel.Debug, "VectorHelper/ExFlags", $"SaveData Dictionary \"{type}\" doesn't exist in \"Arrays\", Creating it...");
+					VectorHelperModule.SaveData.Arrays.Add(type, new Dictionary<string, object[]>());
+				}
+
+				if (!VectorHelperModule.SaveData.Lists.ContainsKey(type))
+				{
+					Logger.Log(LogLevel.Debug, "VectorHelper/ExFlags", $"SaveData Dictionary \"{type}\" doesn't exist in \"Lists\", Creating it...");
+					VectorHelperModule.SaveData.Lists.Add(type, new Dictionary<string, List<object>>());
+				}
+
+				if (!VectorHelperModule.SaveData.Dictionaries.ContainsKey(type))
+				{
+					Logger.Log(LogLevel.Debug, "VectorHelper/ExFlags", $"SaveData Dictionary \"{type}\" doesn't exist in \"Dictionaries\" Creating it...");
+					VectorHelperModule.SaveData.Dictionaries.Add(type, new Dictionary<string, Dictionary<object, object>>());
+				}
+
+				// try
+				// {
+				// 	if (!Vec)
+				// } catch {}
 			}
 		}
 	}
