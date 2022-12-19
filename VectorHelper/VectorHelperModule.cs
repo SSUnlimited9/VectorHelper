@@ -30,6 +30,7 @@ namespace VectorHelper.Module
 			On.Celeste.Player.ctor += Player_ctor;
 			On.Celeste.LevelEnter.Go += LevelEnter_Go;
 			ExtendedCassetteBlock.Load();
+			ExtendedCassetteController.Load();
 			CustomExtendedCassetteBlock.Load();
 		}
 
@@ -38,13 +39,14 @@ namespace VectorHelper.Module
 			On.Celeste.Player.ctor -= Player_ctor;
 			On.Celeste.LevelEnter.Go -= LevelEnter_Go;
 			ExtendedCassetteBlock.Unload();
+			ExtendedCassetteController.Unload();
 			CustomExtendedCassetteBlock.Unload();
 		}
 
 		private void Player_ctor(On.Celeste.Player.orig_ctor orig, Player self, Vector2 position, PlayerSpriteMode spriteMode)
 		{
 			orig(self, position, spriteMode);
-			// Verify the Extended Flag Dictionaries
+			// Just constantly verify it (it's not that expensive right?)
 			VectorHelper.Utils.VUtils.VerifyExFlagDictionaries();
 		}
 
@@ -52,7 +54,7 @@ namespace VectorHelper.Module
 		{
 			orig(session, fromSaveData);
 			// Verify the Extended Flag Dictionaries
-			// VectorHelper.Utils.VUtils.VerifyExFlagDictionaries();
+			VectorHelper.Utils.VUtils.VerifyExFlagDictionaries();
 		}
 	}
 }

@@ -1,18 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Celeste;
 using Celeste.Mod;
 using Monocle;
+using Microsoft.Xna.Framework;
+using VectorHelper.Entities;
 
 namespace VectorHelper.Module
 {
 	public class VectorHelperCommands
 	{
 		[Command("set_variable", "set a var in dictionary")]
-		public static void CMDSETVARIABLE(string Name)
+		public static void CMDSETVARIABLE(string Name, string Value, string DataType = "String", string Type = "Variable", int ArrayLength = 1)
 		{
-			VectorHelperModule.SaveData.SetVariable(Name);
-		}	
+			Variable.DataType dataType = (Variable.DataType)Enum.Parse(typeof(Variable.DataType), DataType);
+			Variable.Type type = (Variable.Type)Enum.Parse(typeof(Variable.Type), Type);
+			Value = Value.Replace("|", ",");
+			VectorHelperModule.SaveData.SetVariable(Name, Value, dataType, type, ArrayLength);
+		}
 
 
 		[Command("count_entities", "get the total number of entities in the level")]
