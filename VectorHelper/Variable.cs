@@ -9,7 +9,7 @@ namespace VectorHelper
 			Short = 4, UShort = 5,
 			Int = 6, UInt = 7,
 			Long = 8, ULong = 9,
-			FLoat = 10, Double = 11, Decimal = 12,
+			Float = 10, Double = 11, Decimal = 12,
 			Bool = 13,
 			Vector2 = 14, Vector3 = 15, Vector4 = 16,
 			Color = 17, Object = 18,
