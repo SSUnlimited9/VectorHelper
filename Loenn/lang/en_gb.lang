@@ -2,7 +2,83 @@ mods.VectorHelper.name=Vector Helper
 
 # Entities
 
+# Custom Extended Cassette Blocks
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.default=Custom Extended Cassette Block
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.default=Extended Cassette Block with more options.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c0=Custom Extended Cassette Block (0 - Blue)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c0=Extended Cassette Block with more options.\nBlue preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c1=Custom Extended Cassette Block (1 - Rose)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c1=Extended Cassette Block with more options.\nRose preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c2=Custom Extended Cassette Block (2 - Bright Sun)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c2=Extended Cassette Block with more options.\nBright Sun preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c3=Custom Extended Cassette Block (3 - Malachite)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c3=Extended Cassette Block with more options.\nMalachite preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c4=Custom Extended Cassette Block (4 - Navy Blue)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c4=Extended Cassette Block with more options.\nNavy Blue preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c5=Custom Extended Cassette Block (5 - Scarlet)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c5=Extended Cassette Block with more options.\nScarlet preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c6=Custom Extended Cassette Block (6 - Tangerine)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c6=Extended Cassette Block with more options.\nTangerine preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c7=Custom Extended Cassette Block (7 - Phthalo)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c7=Extended Cassette Block with more options.\nPhthalo preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c8=Custom Extended Cassette Block (8 - Indigo)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c8=Extended Cassette Block with more options.\nIndigo preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c9=Custom Extended Cassette Block (9 - Maroon)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c9=Extended Cassette Block with more options.\nMaroon preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c10=Custom Extended Cassette Block (10 - Burnt Orange)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c10=Extended Cassette Block with more options.\nBurnt Orange preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c11=Custom Extended Cassette Block (11 - Shamrock Green)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c11=Extended Cassette Block with more options.\nShamrock Green preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c12=Custom Extended Cassette Block (12 - White)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c12=Extended Cassette Block with more options.\nWhite preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c13=Custom Extended Cassette Block (13 - Light Black)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c13=Extended Cassette Block with more options.\nLight Black preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c14=Custom Extended Cassette Block (14 - Light Cyan)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c14=Extended Cassette Block with more options.\nLight Cyan preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.name.c15=Custom Extended Cassette Block (15 - Brown)
+entities.VectorHelper/CustomExtendedCassetteBlock.placements.description.c15=Extended Cassette Block with more options.\nBrown preset.
+entities.VectorHelper/CustomExtendedCassetteBlock.attributes.description.color=The color of the Cassette Block.
+entities.VectorHelper/CustomExtendedCassetteBlock.attributes.description.index=The index of the Cassette Block.
+entities.VectorHelper/CustomExtendedCassetteBlock.attributes.description.activeSprite=Path to the sprite that will be used as the Cassette Block design (Relative to Graphics/Atlases/Gameplay).\nSprite must use Cassette Block format (See the original Cassette Block sprite for reference).
+entities.VectorHelper/CustomExtendedCassetteBlock.attributes.description.inactiveSprite=Same as Active Sprite, but for the inactive state.
+
+# Extended Cassette Block
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c0=Extended Cassette Block (0 - Blue)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c0=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c1=Extended Cassette Block (1 - Rose)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c1=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c2=Extended Cassette Block (2 - Bright Sun)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c2=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c3=Extended Cassette Block (3 - Malachite)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c3=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c4=Extended Cassette Block (4 - Navy Blue)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c4=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c5=Extended Cassette Block (5 - Scarlet)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c5=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c6=Extended Cassette Block (6 - Tangerine)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c6=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c7=Extended Cassette Block (7 - Phthalo)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c7=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c8=Extended Cassette Block (8 - Indigo)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c8=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c9=Extended Cassette Block (9 - Maroon)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c9=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c10=Extended Cassette Block (10 - Burnt Orange)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c10=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c11=Extended Cassette Block (11 - Shamrock Green)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c11=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c12=Extended Cassette Block (12 - White)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c12=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c13=Extended Cassette Block (13 - Light Black)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c13=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c14=Extended Cassette Block (14 - Light Cyan)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c14=Cassette Blocks with a higher index.
+entities.VectorHelper/ExtendedCassetteBlock.placements.name.c15=Extended Cassette Block (15 - Brown)
+entities.VectorHelper/ExtendedCassetteBlock.placements.description.c15=Cassette Blocks with a higher index.
+
 # Controllers
+
+# Extended Cassette Controller
 entities.VectorHelper/ExtendedCassetteController.placements.name.default=Extended Cassette Controller
 entities.VectorHelper/ExtendedCassetteController.placements.description.default=Controller used for overriding some of the cassette block behaviors.
 entities.VectorHelper/ExtendedCassetteController.placements.name.customOrder=Extended Cassette Controller (Custom Order)
@@ -11,4 +87,46 @@ entities.VectorHelper/ExtendedCassetteController.attributes.description.startInd
 entities.VectorHelper/ExtendedCassetteController.attributes.description.skipEmptyIndexes=Whether the controller should skip an index if there are no Cassette Blocks that have that index.
 entities.VectorHelper/ExtendedCassetteController.attributes.description.customOrder=The order of indexs that the controller should activate.\n"Start Index" is added to the beginning of this in game.
 
+# Variable Controller
+entities.VectorHelper/VariableController.placements.name.variable=Variable Controller
+entities.VectorHelper/VariableController.placements.description.variable=Sets variables for use in maps.
+entities.VectorHelper/VariableController.placements.name.array=Variable Controller (Array)
+entities.VectorHelper/VariableController.placements.description.array=Sets arrays for use in maps.
+entities.VectorHelper/VariableController.placements.name.list=Variable Controller (List)
+entities.VectorHelper/VariableController.placements.description.list=Sets lists for use in maps.
+entities.VectorHelper/VariableController.placements.name.dictionary=Variable Controller (Dictionary)
+entities.VectorHelper/VariableController.placements.description.dictionary=Sets dictionaries for use in maps.
+entities.VectorHelper/VariableController.attributes.description.type=The type of variable to set.\nVariable: Stores a simple value.\nArray: Stores multiple values (separated with ",") but is limited to an "Array Length".\nLists: Same as Arrays but their size is dynamic.\nDictionary: Same as List but the values are associated with a key (key>value,Another Key> Another Value).
+entities.VectorHelper/VariableController.attributes.description.dataType=The type of data to store in the variable.\nSee documentation for info on data types and how they are used.
+entities.VectorHelper/VariableController.attributes.description.arrayLength=The length of the array.\nCan be set to a number variable.
+entities.VectorHelper/VariableController.attributes.description.variableName=The name of the variable.\nDont use Brackets "[]" since those are for accessing an index.
+entities.VectorHelper/VariableController.attributes.description.initialValue=The initial value.\nUse "," to separate values for arrays, lists or dictionaries.\nWith dictionaries use ">" for key and values (ex. "A Key>A Value")
+entities.VectorHelper/VariableController.attributes.description.readOnlyRooms=Rooms that the variable can be read in (Used).\nFollows the same formatting as Style Grounds.\n(Use an "!" to make it unreadable in that room)
+entities.VectorHelper/VariableController.attributes.description.writeOnlyRooms=Rooms that the variable can be changed/modified/written in.\nFollows the same formatting as Style Grounds.\n(Use an "!" to make it unchangeable in that room)
+entities.VectorHelper/VariableController.attributes.description.activateMode=When the controller should set the variable.
+entities.VectorHelper/VariableController.attributes.description.oneUse=Makes the controller delete itself for the session after it has set the variable.
+entities.VectorHelper/VariableController.attributes.name.permOneUse=Permanent One Use
+entities.VectorHelper/VariableController.attributes.description.permOneUse=Makes the controller delete itself for the save file after it has set the variable.
+
 # Triggers
+
+# Variable Creation Triggers
+triggers.VectorHelper/VariableCreationTrigger.placements.name.variable=Variable Creation Trigger
+triggers.VectorHelper/VariableCreationTrigger.placements.description.variable=Set variables for use in maps.
+triggers.VectorHelper/VariableCreationTrigger.placements.name.array=Variable Creation Trigger (Array)
+triggers.VectorHelper/VariableCreationTrigger.placements.description.array=Set arrays for use in maps.
+triggers.VectorHelper/VariableCreationTrigger.placements.name.list=Variable Creation Trigger (List)
+triggers.VectorHelper/VariableCreationTrigger.placements.description.list=Set lists for use in maps.
+triggers.VectorHelper/VariableCreationTrigger.placements.name.dictionary=Variable Creation Trigger (Dictionary)
+triggers.VectorHelper/VariableCreationTrigger.placements.description.dictionary=Set dictionaries for use in maps.
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.type=The type of variable to set.\nVariable: Stores a simple value.\nArray: Stores multiple values (separated with ",") but is limited to an "Array Length".\nLists: Same as Arrays but their size is dynamic.\nDictionary: Same as List but the values are associated with a key (key>value,Another Key> Another Value).
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.dataType=The type of data to store in the variable.\nSee documentation for info on data types and how they are used.
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.arrayLength=The length of the array.\nCan be set to a number variable.
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.variableName=The name of the variable.\nDont use Brackets "[]" since those are for accessing an index.
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.initialValue=The initial value.\nUse "," to separate values for arrays, lists or dictionaries.\nWith dictionaries use ">" for key and values (ex. "A Key>A Value")
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.readOnlyRooms=Rooms that the variable can be read in (Used).\nFollows the same formatting as Style Grounds.\n(Use an "!" to make it unreadable in that room)
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.writeOnlyRooms=Rooms that the variable can be changed/modified/written in.\nFollows the same formatting as Style Grounds.\n(Use an "!" to make it unchangeable in that room)
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.activateMode=When the trigger should set the variable.
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.oneUse=Makes the trigger delete itself for the session after it has set the variable.
+triggers.VectorHelper/VariableCreationTrigger.attributes.name.permOneUse=Permanent One Use
+triggers.VectorHelper/VariableCreationTrigger.attributes.description.permOneUse=Makes the trigger delete itself for the save file after it has set the variable.

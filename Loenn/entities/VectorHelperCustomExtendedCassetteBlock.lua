@@ -24,12 +24,11 @@ function customExtendedCassetteBlock.placements(entity)
 	local placements = {}
 
 	table.insert(placements, {
-		name = "custom_extended_cassette_block",
+		name = "default",
 		data = {
 			width = 16,
 			height = 16,
 			color = "ffffff",
-			inactiveColor = "Default",
 			index = 16,
 			activeSprite = "objects/cassetteblock/solid",
 			inactiveSprite = "objects/cassetteblock/pressed00",
@@ -50,12 +49,11 @@ function customExtendedCassetteBlock.placements(entity)
 			inactive = "VectorHelper/cassetteBlock/extended" .. i
 		end
 		table.insert(placements, {
-			name = "custom_extended_cassette_block_" .. i,
+			name = "c" .. i,
 			data = {
 				width = 16,
 				height = 16,
 				color = exColors[i + 1],
-				inactiveColor = "Default",
 				index = i,
 				activeSprite = "objects/cassetteblock/solid",
 				inactiveSprite = inactive,
@@ -77,7 +75,8 @@ customExtendedCassetteBlock.fieldOrder = {
 
 customExtendedCassetteBlock.fieldInformation = {
 	index = {
-		fieldType = "integer"
+		fieldType = "integer",
+		minimumValue = 0
 	},
 	color = {
 		fieldType = "color",

@@ -14,7 +14,7 @@ function extendedCassetteBlock.placements(entity)
 
 	for i = 0, 15 do
 		table.insert(placements, {
-			name = "extended_cassette_block_" .. i,
+			name = "c" .. i,
 			data = {
 				width = 16,
 				height = 16,

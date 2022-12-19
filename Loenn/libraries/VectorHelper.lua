@@ -3,9 +3,51 @@ local connectedEntities = require("helpers.connected_entities")
 
 local vectorHelper = {}
 
+vectorHelper.varTypes = {
+	"Variable", "Array",
+	"List", "Dictionary"
+}
+
+vectorHelper.dataTypes = {
+	["String"] = "String",
+	["Character"] = "Char",
+	["Signed Byte"] = "SByte",
+	["Unsigned Byte"] = "Byte",
+	["Short"] = "Short",
+	["Unsigned Short"] = "UShort",
+	["Integer"] = "Int",
+	["Unsigned Integer"] = "UInt",
+	["Long"] = "Long",
+	["Unsigned Long"] = "ULong",
+	["Float"] = "Float",
+	["Double"] = "Double",
+	["Decimal"] = "Decimal",
+	["Boolean"] = "Bool",
+	["Vector2"] = "Vector2",
+	["Vector3"] = "Vector3",
+	["Vector4"] = "Vector4",
+	["Color"] = "Color",
+	["Object"] = "Object",
+	["EntityData"] = "EntityData",
+	["Dynamic"] = "Dynamic"
+}
+
+vectorHelper.activateModes0 = {
+	"OnRoomEnter", "OnRoomExit"
+}
+
+vectorHelper.activateModes1 = {
+	"OnTriggerEnter", "OnTriggerExit"
+}
+
+vectorHelper.gearIcon = "VectorHelper/gear_icon"
+vectorHelper.unknown = "VectorHelper/unknown"
+
 vectorHelper.controllerIcon = "VectorHelper/controller_icon"
 vectorHelper.controllerBgLight = "VectorHelper/controller_bg_0"
 vectorHelper.controllerBgDark = "VectorHelper/controller_bg_1"
+vectorHelper.controllerBgAlt = "VectorHelper/controller_bg_2"
+vectorHelper.controllerBgAlt0 = "VectorHelper/controller_bg_3"
 
 vectorHelper.extendedCassetteColors = {
 	-- Original Cassette Colors
